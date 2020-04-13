@@ -6,3 +6,4 @@ Group Members:
 2-Harun Can Surav (21903452)
 3-Cenk Duran (21901972)
 4-Övgüm Can Sezen (21902418)
+5-Oğuz Ata Çal (21903088)
