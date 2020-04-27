@@ -10,67 +10,64 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="239dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="88dp"
+        android:layout_height="wrap_content"
         android:background="@color/colorButton"
         android:text="@string/app_name"
         android:textAlignment="center"
         android:textColor="@color/colorText"
         android:textSize="30sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07999998" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="138dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="168dp"
+        android:layout_height="wrap_content"
         android:background="@color/colorButton"
         android:onClick="enterLocations"
         android:text="@string/enter_locations_button"
         android:textAllCaps="true"
         android:textColor="@color/colorText"
         android:textColorHighlight="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="24dp"
         android:background="@color/colorButton"
         android:onClick="settingsButton"
         android:text="@string/settings_button"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48000002" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
         android:background="@color/colorButton"
         android:text="@string/quit_button"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
