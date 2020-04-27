@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">Route Optimizer</string>
+    <string name="settings_button">Settings</string>
+    <string name="quit_button">Quit</string>
+    <string name="enter_locations_button">Enter Locations</string>
+
+    <!-- Preference Titles -->
+
+    <!-- Messages Preferences -->
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="title_activity_enter_locations_screen">EnterLocationsScreen</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="download_the_map_button">Download the Map</string>
+    <string name="satellite_view_button">Satellite View</string>
+    <string name="map_location_button">Map Location</string>
+    <string name="accuracy_level_button">Accuracy Level</string>
+    <string name="select_from_map_button">Select From Map</string>
+    <string name="enter_coordinates_button">Enter Coordinates</string>
+    <string name="enter_link_button">Enter Link</string>
+    <string name="done_button">Done</string>
+    <string name="edit_button">Edit</string>
+
 </resources>
