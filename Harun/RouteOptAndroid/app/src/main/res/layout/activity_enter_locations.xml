@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/ppie"
-    tools:context=".EnterLocationsActivity">
+    tools:context=".frontend.EnterLocationsActivity">
 
     <Button
         android:id="@+id/button3"
@@ -25,6 +25,7 @@
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:background="@color/colorButton"
+        android:onClick="enterCoordinates"
         android:text="@string/enter_coordinates_button"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toTopOf="@+id/button8"

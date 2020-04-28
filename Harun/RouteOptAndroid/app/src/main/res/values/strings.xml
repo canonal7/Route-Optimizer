@@ -30,5 +30,8 @@
     <string name="enter_link_button">Enter Link</string>
     <string name="done_button">Done</string>
     <string name="edit_button">Edit</string>
+    <string name="enter_x_hint">X Coordinate</string>
+    <string name="enter_y_hint">Y Coordinate</string>
+    <string name="enter_button">Enter</string>
 
 </resources>
