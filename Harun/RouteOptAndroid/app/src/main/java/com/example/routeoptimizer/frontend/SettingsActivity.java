@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.routeoptimizer.R;
 
@@ -14,5 +15,16 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         Intent intent = getIntent();
+    }
+    /**Called when user taps Map Locations button */
+    public void mapLocations(View view) {
+        Intent intent = new Intent(this, MapLocationsActivity.class);
+        startActivity(intent);
+    }
+
+    /**Called when user taps Accuracy Level button */
+    public void accuracyLevel(View view) {
+        Intent intent;
+        //startActivity(intent);
     }
 }
