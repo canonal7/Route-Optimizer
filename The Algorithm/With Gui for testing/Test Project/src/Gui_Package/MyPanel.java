@@ -1,6 +1,5 @@
 package Gui_Package;
 
-
 import Edge_Package.EdgeList;
 import Node_Package.*;
 
@@ -36,18 +35,9 @@ public class MyPanel extends JPanel
         l.add( new Node( 100,200 ));
         l.add( new Node( 200,200 ));
         l.add( new Node( 500, 500 ));
-        l2.add( new Node( 100,100 ));
-        l2.add( new Node( 200,100 ));
-        l2.add( new Node( 100,200 ));
-        l2.add( new Node( 200,200 ));
-        l2.add( new Node( 500, 500 ));
        //   l.add( new Node( 700, 700 ));
    //     l.add( new Node( 500, 510 ));
  //       l.add( new Node( 510, 500 ));
-
-
-
-
 
         l = algorithm(l); //                where we order the arraylist of locations
 
@@ -56,7 +46,6 @@ public class MyPanel extends JPanel
         System.out.println( "Distance is: "+ distance);
 
         addMouseMotionListener( new MyMouseMotionListener(l) );
-
     }
 
 
@@ -70,13 +59,6 @@ public class MyPanel extends JPanel
             if( n != l.size() - 1) // draws a between the current location and the next, if there is a next location
                 g.drawLine(l.get(n).getX() + radius, l.get(n).getY() + radius , l.get(n + 1).getX() + radius, l.get(n + 1).getY() + radius );
         }
-        for( int n = 0; n < l2.size(); n++)
-        {
-            l2.get(n).draw( g );
-            radius = l2.get(n).RADIUS;
-            if( n != l2.size() - 1) // draws a between the current location and the next, if there is a next location
-                g.drawLine(l2.get(n).getX() + radius, l2.get(n).getY() + radius , l2.get(n + 1).getX() + radius, l2.get(n + 1).getY() + radius );
-        }
     }
 
 
@@ -87,10 +69,6 @@ public class MyPanel extends JPanel
         System.out.println( e.extractNodeList() );
         return e.extractNodeList();
     }
-
-
-
-
 
 
     // inner class
@@ -122,9 +100,5 @@ public class MyPanel extends JPanel
             if( temp != null )
                 setToolTipText( "X: "+ x + " Y: "+ y + " Node no: " + temp.getOrder() + " of " + l.size());
         }
-
     }
-
-
-
 }

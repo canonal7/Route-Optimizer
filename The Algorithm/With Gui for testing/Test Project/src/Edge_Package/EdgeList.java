@@ -46,8 +46,8 @@ public class EdgeList
     {
         if( finalRoute != null )
         {
-            // following 3 lines of code is just for the gui, makes sure that the colors of the first and last node are right
             NodeList temp = new NodeList();
+            // following 2 lines of code is just for the gui, makes sure that the colors of the first and last node are right
             Node temp1 = new Node(0,0);
             temp1.resetCounter();
 
@@ -98,6 +98,8 @@ public class EdgeList
             finalRoute.add(temp);
             startNode = indexOfSmallestDistance;
         }
+        // adding the edge between the last node and the first node to complete the route
+        finalRoute.add( new Edge( finalRoute.get(finalRoute.size()-1).getEndNode(), finalRoute.get(0).getStartNode()));
         System.out.println( finalRoute );
 
     }
