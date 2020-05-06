@@ -37,7 +37,8 @@
     <string name="radio_button_country">Country</string>
     <string name="radio_button_continent">Continental</string>
     <string name="radio_button_intercontinental">Inter-Continental</string>
-    <string name="use_case_text">Use Case:</string>
+    <string name="use_case_text">Use Case</string>
     <string name="continent_hint">Continent</string>
+    <string name="save_button">Save</string>
 
 </resources>

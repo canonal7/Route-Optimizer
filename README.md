@@ -21,10 +21,10 @@ It optimizes a route along the given locations. There are both mobile and Java S
 #### Group Members
 - [member1](group/member1_log.md)    _(full name & link to personal log file)_
 - [member2](group/member2_log.md)
-- member3
+- [Harun Can Surav](group/Surav_HarunCan_log.md)
 - member4
 - member5
 
 ****
-**Instructor:** _(name)_   **TA:**  _(name)_
+**Instructor:** _(David Davenport)_   **TA:**  _(Khushbakht Ali Qamar)_
 ****

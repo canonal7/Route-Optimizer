@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 
 import com.example.routeoptimizer.R;
+
+import java.io.File;
+import java.io.PrintWriter;
 
 public class EnterLocationsActivity extends AppCompatActivity {
 
@@ -21,4 +25,6 @@ public class EnterLocationsActivity extends AppCompatActivity {
         Intent intent = new Intent(this, EnterCoordinatesActivity.class);
         startActivity(intent);
     }
+
+
 }
