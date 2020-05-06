@@ -1,0 +1,94 @@
+test1
+	Tour of
+		Western Shara
+	Size
+		29
+	Optimal Distance
+		27,603.
+		
+	In random order Distance
+		52,284.07
+		Percentage Error: 89.41%
+		
+	Distance calculated with NN
+		36,388.06
+		Percentage Error: 31.83%
+		Time taken: 0.03 seconds
+		
+		
+test 2
+	Tour of
+		Qatar
+	Size
+		194
+	Optimal Distance
+		9352
+	
+	In random order Distance
+		39,555.63
+		Percentage Error: 322.96%
+	
+	Distance calculated with NN
+		11,892.89
+		Percentage Error: 27.17%
+		Time taken: 0.05 seconds
+		
+test 3
+	Tour of 
+		Zimbabwe
+	Size
+		929
+	Optimal Distance
+		95,345
+	
+	In random order Distance
+		933,843.78
+		Percentage Error: 879.44%
+	
+	Distance calculated with NN
+		119,278.23
+		Percentage Error: 25.10%
+		Time taken: 0.2 seconds
+
+test 4
+	Tour Of
+		Greece
+	Size
+		9,882
+	Optimal Distance
+		300,899
+	
+	In random order Distance
+		2,842,782.6950363484
+		Percentage Error: 844.76309161425%
+		
+	Distance calculated with NN
+		Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+		Percentage Error: NA
+		Time taken: NA
+		
+test 5
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
