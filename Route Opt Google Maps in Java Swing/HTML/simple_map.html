@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -46,6 +45,8 @@
       // The user can then click an option to hide, show or delete the markers.
       var map;
       var markers = [];
+      var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+      var labelIndex = 0;
 
       function initMap() {
         var bilkent = {lat: 39.878040, lng: 32.748825};
@@ -59,6 +60,8 @@
         // This event listener will call addMarker() when the map is clicked.
         map.addListener('click', function(event) {
           addMarker(event.latLng);
+          //console.log(labelIndex + getPosition());
+
         });
 
         
@@ -69,8 +72,15 @@
       function addMarker(location) {
         var marker = new google.maps.Marker({
           position: location,
+          //labelIndex++,
+          label: labelIndex.toString(),
+          
           map: map,
           draggable: true
+          //Gets Position of the markers
+          //console.log(labelIndex + position.toString());
+          
+
           
 
         });
@@ -99,6 +109,9 @@
         clearMarkers();
         markers = [];
       }
+
+      
+
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjo9_uBERd5oxWphvLurPH-zOFkW_tZig&callback=initMap">
