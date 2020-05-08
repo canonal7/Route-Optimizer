@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".frontend.EditLocationsActivity"
+            android:parentActivityName=".frontend.EnterLocationsActivity"/>
+        <activity
             android:name=".frontend.MapLocationsActivity"
             android:parentActivityName=".frontend.SettingsActivity" />
         <activity

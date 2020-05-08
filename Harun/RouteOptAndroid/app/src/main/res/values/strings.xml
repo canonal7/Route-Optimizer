@@ -40,5 +40,7 @@
     <string name="use_case_text">Use Case</string>
     <string name="continent_hint">Continent</string>
     <string name="save_button">Save</string>
+    <string name="selectButton">Select</string>
+    <string name="removeButton">Remove</string>
 
 </resources>

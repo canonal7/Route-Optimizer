@@ -1,2 +1,2 @@
 rootProject.name='Route Optimizer'
-include ':app'
+include ':app', ':Just Algorithm'
