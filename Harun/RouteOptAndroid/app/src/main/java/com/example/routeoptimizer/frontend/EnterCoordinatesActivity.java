@@ -40,10 +40,11 @@ public class EnterCoordinatesActivity extends AppCompatActivity {
         FileInputStream fis = null;
         FileOutputStream fos = null;
 
-        EditText xCorText = (EditText) findViewById(R.id.editText2);
-        EditText yCorText = (EditText) findViewById(R.id.editText3);
+        EditText xCorText = findViewById(R.id.editText2);
+        EditText yCorText = findViewById(R.id.editText3);
         xCor = Double.parseDouble(xCorText.getText().toString());
         yCor = Double.parseDouble(yCorText.getText().toString());
+        // Creating the new Node
         Node location = new Node(xCor, yCor);
         coordinates =  location.toString();
         xCorText.setText("");
@@ -62,11 +63,9 @@ public class EnterCoordinatesActivity extends AppCompatActivity {
                 sb.append(text).append("\n");
             }
             coordinatesSoFar = sb.toString();
-            coordinatesSoFar += coordinates;
+            coordinatesSoFar += coordinates + "\n";
             System.out.println(coordinatesSoFar);
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -87,9 +86,11 @@ public class EnterCoordinatesActivity extends AppCompatActivity {
                 fos.write(coordinatesSoFar.getBytes());
                 Toast.makeText(this, "Coordinate data is saved.", Toast.LENGTH_LONG).show();
             } catch (IOException e) {
+                Toast.makeText(this, "Upload failed, try again", Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
         } catch (FileNotFoundException e) {
+            Toast.makeText(this, "Upload failed, try again", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         } finally {
             if (fos != null) {

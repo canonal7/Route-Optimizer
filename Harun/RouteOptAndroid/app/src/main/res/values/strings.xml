@@ -42,5 +42,6 @@
     <string name="save_button">Save</string>
     <string name="selectButton">Select</string>
     <string name="removeButton">Remove</string>
+    <string name="selectLocation">Select Location</string>
 
 </resources>
