@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3295c0c7-bd63-424d-9ae4-e2571e17cbc8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/java/com/example/routeoptimizer/frontend/EnterCoordinatesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/java/com/example/routeoptimizer/frontend/EnterCoordinatesActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/java/com/example/routeoptimizer/frontend/MapLocationsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/java/com/example/routeoptimizer/frontend/MapLocationsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/java/com/example/routeoptimizer/frontend/EditLocationsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/java/com/example/routeoptimizer/frontend/EditLocationsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/res/layout/activity_edit_locations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/res/layout/activity_edit_locations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,26 +81,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1542" y="634" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1588778028642" />
-    <state width="1236" height="299" key="GridCell.Tab.0.bottom" timestamp="1588778143737">
+    <state width="1687" height="106" key="GridCell.Tab.0.bottom" timestamp="1589030654468">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1882" height="139" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588681989256" />
-    <state width="1236" height="299" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588778143737" />
-    <state width="1236" height="299" key="GridCell.Tab.0.center" timestamp="1588778143737">
+    <state width="1687" height="106" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1589030654468" />
+    <state width="1687" height="106" key="GridCell.Tab.0.center" timestamp="1589030654468">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1882" height="139" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588681989256" />
-    <state width="1236" height="299" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588778143737" />
-    <state width="1236" height="299" key="GridCell.Tab.0.left" timestamp="1588778143737">
+    <state width="1687" height="106" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1589030654468" />
+    <state width="1687" height="106" key="GridCell.Tab.0.left" timestamp="1589030654468">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1882" height="139" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588681989256" />
-    <state width="1236" height="299" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588778143737" />
-    <state width="1236" height="299" key="GridCell.Tab.0.right" timestamp="1588778143737">
+    <state width="1687" height="106" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1589030654468" />
+    <state width="1687" height="106" key="GridCell.Tab.0.right" timestamp="1589030654468">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1882" height="139" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588681989256" />
-    <state width="1236" height="299" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588778143737" />
+    <state width="1687" height="106" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1589030654468" />
     <state width="1236" height="299" key="GridCell.Tab.1.bottom" timestamp="1588778143737">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -120,11 +121,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587739247940" />
-    <state x="875" y="464" key="com.intellij.ide.util.TipDialog" timestamp="1588787915710">
+    <state x="875" y="464" key="com.intellij.ide.util.TipDialog" timestamp="1589030368651">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588617643020" />
-    <state x="875" y="464" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1588787915710" />
+    <state x="875" y="464" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1589030368651" />
     <state x="656" y="118" width="737" height="804" key="find.popup" timestamp="1588522429827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
