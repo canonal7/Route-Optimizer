@@ -221,7 +221,7 @@ public class Main extends Application {
 
 
 --------------------------------------
-CSS
+//CSS
 
 .root{
     -fx-background-color: #696969;
