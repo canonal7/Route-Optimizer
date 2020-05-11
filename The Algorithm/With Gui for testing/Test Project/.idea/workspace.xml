@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3295c0c7-bd63-424d-9ae4-e2571e17cbc8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/java/com/example/routeoptimizer/frontend/EditLocationsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/java/com/example/routeoptimizer/frontend/EditLocationsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/res/layout/activity_edit_locations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/res/layout/activity_edit_locations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/java/com/example/routeoptimizer/frontend/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/java/com/example/routeoptimizer/frontend/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/java/com/example/routeoptimizer/frontend/SettingsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Harun/RouteOptAndroid/app/src/main/java/com/example/routeoptimizer/frontend/SettingsActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,19 +119,20 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587739247940" />
-    <state x="875" y="464" key="com.intellij.ide.util.TipDialog" timestamp="1589030368651">
+    <state x="875" y="464" key="com.intellij.ide.util.TipDialog" timestamp="1589110721813">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588617643020" />
-    <state x="875" y="464" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1589030368651" />
+    <state x="875" y="464" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1589110721813" />
     <state x="656" y="118" width="737" height="804" key="find.popup" timestamp="1588522429827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="118" width="737" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588522429827" />
-    <state x="627" y="141" key="new project wizard" timestamp="1588195378974">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="836" y="190" key="new project wizard" timestamp="1589110759252">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="627" y="141" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1588195378974" />
+    <state x="836" y="190" key="new project wizard/0.0.2560.1400@0.0.2560.1400" timestamp="1589110759252" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1587738755800">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
