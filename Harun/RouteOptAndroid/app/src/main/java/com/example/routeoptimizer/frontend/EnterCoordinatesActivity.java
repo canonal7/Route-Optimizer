@@ -16,9 +16,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+import NodePack.Node;
 
-import Node_Package.Node;
 
 public class EnterCoordinatesActivity extends AppCompatActivity {
 
@@ -40,66 +39,70 @@ public class EnterCoordinatesActivity extends AppCompatActivity {
         FileInputStream fis = null;
         FileOutputStream fos = null;
 
-        EditText xCorText = (EditText) findViewById(R.id.editText2);
-        EditText yCorText = (EditText) findViewById(R.id.editText3);
-        xCor = Double.parseDouble(xCorText.getText().toString());
-        yCor = Double.parseDouble(yCorText.getText().toString());
-        Node location = new Node(xCor, yCor);
-        coordinates =  location.toString();
-        xCorText.setText("");
-        yCorText.setText("");
-        // Checking if it works
-        System.out.println(xCor);
-        System.out.println(yCor);
-        // Reading the prior data
-        try {
-            fis = openFileInput(FILE_NAME);
-            InputStreamReader isr = new InputStreamReader(fis);
-            BufferedReader br = new BufferedReader(isr);
-            StringBuilder sb = new StringBuilder();
-            String text;
-            while((text = br.readLine()) != null) {
-                sb.append(text).append("\n");
-            }
-            coordinatesSoFar = sb.toString();
-            coordinatesSoFar += coordinates;
-            System.out.println(coordinatesSoFar);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (fis != null) {
-                try {
-                    fis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+        EditText xCorText = findViewById(R.id.editText2);
+        EditText yCorText = findViewById(R.id.editText3);
+        if(xCorText.getText().toString().trim().length() <= 0 || yCorText.getText().toString().trim().length() <= 0) {
+            Toast.makeText(this, "Enter a value", Toast.LENGTH_LONG).show();
         }
-
-        // Saving the data
-
-        try {
-            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
+        else {
+            xCor = Double.parseDouble(xCorText.getText().toString());
+            yCor = Double.parseDouble(yCorText.getText().toString());
+            // Creating the new Node
+            coordinates = xCor + " " + yCor;
+            xCorText.setText("");
+            yCorText.setText("");
+            // Checking if it works
+            System.out.println(xCor);
+            System.out.println(yCor);
+            // Reading the prior data
             try {
-                fos.write(coordinatesSoFar.getBytes());
-                Toast.makeText(this, "Coordinate data is saved.", Toast.LENGTH_LONG).show();
+                fis = openFileInput(FILE_NAME);
+                InputStreamReader isr = new InputStreamReader(fis);
+                BufferedReader br = new BufferedReader(isr);
+                StringBuilder sb = new StringBuilder();
+                String text;
+                while ((text = br.readLine()) != null) {
+                    sb.append(text).append("\n");
+                }
+                coordinatesSoFar = sb.toString();
+                coordinatesSoFar += coordinates + "\n";
+                System.out.println(coordinatesSoFar);
+
             } catch (IOException e) {
                 e.printStackTrace();
+            } finally {
+                if (fis != null) {
+                    try {
+                        fis.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            if (fos != null) {
+
+            // Saving the data
+
+            try {
+                fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
                 try {
-                    fos.close();
+                    fos.write(coordinatesSoFar.getBytes());
+                    Toast.makeText(this, "Coordinate data is saved.", Toast.LENGTH_LONG).show();
                 } catch (IOException e) {
+                    Toast.makeText(this, "Upload failed, try again", Toast.LENGTH_LONG).show();
                     e.printStackTrace();
+                }
+            } catch (FileNotFoundException e) {
+                Toast.makeText(this, "Upload failed, try again", Toast.LENGTH_LONG).show();
+                e.printStackTrace();
+            } finally {
+                if (fos != null) {
+                    try {
+                        fos.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
-
     }
 }

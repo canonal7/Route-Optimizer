@@ -9,34 +9,21 @@
 
     <Spinner
         android:id="@+id/locationsCollection"
-        android:layout_width="369dp"
-        android:layout_height="58dp"
+        android:layout_width="260dp"
+        android:layout_height="53dp"
         android:background="@color/colorPrimary"
+        android:popupBackground="@color/colorPrimary"
         android:scrollbarThumbHorizontal="@color/colorButton"
         android:scrollbarThumbVertical="@color/colorButton"
         android:scrollbarTrackHorizontal="@color/colorButton"
         android:scrollbarTrackVertical="@color/colorButton"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.050000012" />
-
-    <Button
-        android:id="@+id/selectBut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorButton"
-        android:onClick="getSelectedLocation"
-        android:text="@string/selectButton"
-        android:textColor="@color/colorText"
-        app:layout_constraintBottom_toTopOf="@+id/removeBut"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locationsCollection"
-        app:layout_constraintVertical_bias="0.253" />
+        app:layout_constraintVertical_bias="0.11" />
 
     <Button
         android:id="@+id/removeBut"
@@ -48,7 +35,8 @@
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/locationsCollection"
-        app:layout_constraintVertical_bias="0.74" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.57" />
 </androidx.constraintlayout.widget.ConstraintLayout>
