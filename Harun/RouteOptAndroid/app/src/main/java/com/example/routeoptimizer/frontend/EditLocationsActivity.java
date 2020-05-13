@@ -1,7 +1,5 @@
 package com.example.routeoptimizer.frontend;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.routeoptimizer.R;
 
@@ -21,9 +20,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import Node_Package.Node;
-import Node_Package.NodeList;
 
 public class EditLocationsActivity extends AppCompatActivity {
 

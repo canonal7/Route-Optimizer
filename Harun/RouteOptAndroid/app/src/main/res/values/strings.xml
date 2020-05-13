@@ -43,5 +43,7 @@
     <string name="selectButton">Select</string>
     <string name="removeButton">Remove</string>
     <string name="selectLocation">Select Location</string>
+    <string name="title_activity_route_display">Map</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>
