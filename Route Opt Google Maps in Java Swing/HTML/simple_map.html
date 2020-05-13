@@ -7,6 +7,7 @@
        * element that contains the map. */
       #map {
         height: 100%;
+        width: 74%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -28,9 +29,14 @@
         padding-left: 10px;
       }
       #label {
+        font-size: 30px;
+        position: absolute;
+        top: 15px; 
+        right: 190px;
       	float: right;
       	width: 10em;
       	text-align: left;
+        vertical-align: top;
       }
 
     </style>
@@ -40,10 +46,11 @@
       <input onclick="clearMarkers();" type=button value="Hide Markers">
       <input onclick="showMarkers();" type=button value="Show All Markers">
       <input onclick="deleteMarkers();" type=button value="Delete Markers">
+     
     </div>
     <div id="map"></div>
-    <label id = "points">
-    	Points
+    <label id = "label">
+    <p>Points</p>	
     </label>
     <p>Click on the map to add markers.</p>
     <script>
@@ -54,6 +61,7 @@
       var map;
       var markers = [];
       var labelIndex = 1;
+      var string = "";
 
       function initMap() {
         var bilkent = {lat: 39.878040, lng: 32.748825};
@@ -87,10 +95,12 @@
           draggable: true
         });
         markers.push(marker);
-        var string = "";
-        string = string + ("Point" + labelIndex + ": " + marker.getPosition()) + "\n";
+        
+        string += (("Point" + labelIndex + ": " + marker.getPosition()) + "\n");
         //document.getElementById('Points').innerHTML = string;
         console.log(string);
+        document.getElementById("label").innerHTML = string;
+       
         labelIndex++;
       }
 
@@ -114,12 +124,18 @@
       // Deletes all markers in the array by removing references to them.
       function deleteMarkers() {
         clearMarkers();
+        document.getElementById("label").innerHTML = "";
+        string = "";
+        labelIndex = 1;
+
         markers = [];
       }
+
 
       
 
     </script>
+    
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjo9_uBERd5oxWphvLurPH-zOFkW_tZig&callback=initMap">
     </script>

@@ -1,5 +1,7 @@
 package com.canonal.menu;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import com.kingaspx.util.BrowserUtil;
 import com.kingaspx.version.Version;
 import com.teamdev.jxbrowser.chromium.Browser;
@@ -13,8 +15,21 @@ import com.teamdev.jxbrowser.chromium.events.LoadAdapter;
 import com.teamdev.jxbrowser.chromium.events.TitleEvent;
 import com.teamdev.jxbrowser.chromium.swing.BrowserView;
 import java.awt.BorderLayout;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
-public class Menu extends javax.swing.JFrame {
+
+/**
+ *
+ * @author canonal
+ */
+public class Menu  extends javax.swing.JFrame  {
 
     public Menu() {
         initComponents();
@@ -176,6 +191,8 @@ public class Menu extends javax.swing.JFrame {
 
     Browser browser;
     BrowserView view;
+    String locationList = "";
+    
 
     private void open_site() {
         BrowserUtil.setVersion(Version.V6_22);
@@ -190,7 +207,13 @@ public class Menu extends javax.swing.JFrame {
         });
 
         browser.addConsoleListener((ConsoleEvent evt) -> {
-            System.out.println("LOG: " + evt.getMessage());
+            try {
+                locationList = evt.getMessage();
+                printToFile(locationList);
+                System.out.println("LOG: " + evt.getMessage());
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
 
         browser.addLoadListener(new LoadAdapter() {
@@ -202,5 +225,23 @@ public class Menu extends javax.swing.JFrame {
 
         browser.loadURL("file:///Users/canonal/Desktop/CS102%20Group%20Project/CS102-Group-1F-Project/Route%20Opt%20Google%20Maps%20in%20Java%20Swing/HTML/simple_map.html");
     }
+    
+       public void printToFile(String s) throws FileNotFoundException
+       {
+           try
+           {
+           String fileName = "locations.txt";
+           PrintWriter pw = new PrintWriter(fileName);
+           pw.print(s);
+           pw.close();
+           System.out.println(" Done");
+           }
+           catch(FileNotFoundException e)
+           {
+               e.printStackTrace();
+           }
+           
+       }
+
 
 }
