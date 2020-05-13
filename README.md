@@ -10,16 +10,16 @@ The information and code in this repository are submitted in partial fulfillment
 It optimizes a route along the given locations. There are both mobile and Java Swing app. 
    
 ## Project Status
-+ **Group/project Selection:** completed (date)
-+ **Requirements:** completed (date)
-+ **UI Design:** completed (date)
++ **Group/project Selection:** completed (Beginning of the semester)
++ **Requirements:** completed (Mid-March)
++ **UI Design:** completed (End of March)
 + **Detailed Design:** in progress
 + **Implementation:** not started!
 + **Reflections:** not yet!
 
 [Group Meetings Log](group/meetingslog.md)
 #### Group Members
-- [member1](group/member1_log.md)    _(full name & link to personal log file)_
+- [Can Onal](group/Onal_Can_log.md)    _(full name & link to personal log file)_
 - [member2](group/member2_log.md)
 - [Harun Can Surav](group/Surav_HarunCan_log.md)
 - member4
