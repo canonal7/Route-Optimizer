@@ -3,24 +3,26 @@
 Below is a record of our project group meetings. This page will be submitted together with the rest of the repository, in partial fulfillment of the CS102 course requirements.
 
 ****
-### Meeting ~ (date, duration)
+### Meeting ~ (23.04.2020, 45 minutes)
 ****
-**Present:** x, y, z...   _**Absent:**_  a, b.
+**Present:** Everyone   _**Absent:**_ No one
 
 **Discussion:** 
-We reviewed progress. Member1 & member2 reported back, explaining that they had discovered rst and demonstrated some useful examples. Member3 had slept and has not yet completed his task, but promised to do so this week! We decided we need to do this, that, and the other, and divided the work between us. Next meeting planned for (date).
+We reviewed progress. Planned to have the core functionalities by next week. Planned to have a meeting next week. Re-assigned and reviewed the task distribution. Saad was assigned to PC GUI Harun was assigned to the Android App GUI Cenk and Can were assigned to implementing the map to app and everything related with map, Oguz and Ovgum were assigned to the Algorithm.
 
-**ToDo:** x & y will do this by ???, z & a will do that by ???, etc.
-
-****
-### Meeting ~ (date, duration)
-****
-This week I helped abc brainstorm ideas for...
 
 ****
-### Meeting ~ (date, duration)
+### Meeting ~ (2.05.2020, 30 minutes)
 ****
-blah, blah, blah...
+**Present:** Everyone   _**Absent:**_ No one
 
+We reviewed the progress and saw that everyone have come to a point but decided to keep improving our parts. We agreed that our program needs to be improved more to have the basic functionalities. Agreed that everyone have different workload but the progress so far is good. 
+
+****
+### Meeting ~ (08.05.2020, 40 minutes)
+****
+**Present:** Everyone   _**Absent:**_ No one
+
+Harun showed his work via screen sharing, Saad showed his GUI, Cenk and Can showed what they have done in the map-work, Oguz and Ovgum also shared their algorithm and discussed the flow of information required input-outputs. Also agreed that Oguz and Ovgum should start to help others' assignments since they have finished majority of their work. Planned to speed-up work.
 ****
 ****

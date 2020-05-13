@@ -17,7 +17,9 @@ This week I tried to add markers to the map and succeed,
 I am trying to find a method that returns the geo-positions of the locations marked,
 We are trying to combine the map with the algorithm.
 
-### ~ date ~
-blah, blah, blah...
+### ~ 13.05.2020 ~
+This week I have been trying to print the locations to a local output file and I managed it.
+I learned a some methods called console listener,
+I learned the basics of Java's File class which is used to read and write local files. 
 
 ****
