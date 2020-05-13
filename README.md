@@ -10,9 +10,9 @@ The information and code in this repository are submitted in partial fulfillment
 It optimizes a route along the given locations. There are both mobile and Java Swing app. 
    
 ## Project Status
-+ **Group/project Selection:** completed (date)
-+ **Requirements:** completed (date)
-+ **UI Design:** completed (date)
++ **Group/project Selection:** completed (23 February 2020)
++ **Requirements:** completed (1 March 2020)
++ **UI Design:** completed (24 March 2020)
 + **Detailed Design:** in progress
 + **Implementation:** not started!
 + **Reflections:** not yet!
