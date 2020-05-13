@@ -23,6 +23,7 @@ import NodePack.NodeList;
 public class EnterLocationsActivity extends AppCompatActivity {
 
     NodeList rawNodes = new NodeList();
+
     FileInputStream fis;
     FileOutputStream fos;
     String rawNodesString;

@@ -9,8 +9,14 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CustomCap;
+import com.google.android.gms.maps.model.JointType;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.maps.model.RoundCap;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -52,9 +58,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-        // Adding markers (hopefully)
-
+        // Adding markers
         testButton();
         if(coordinatesList.length > 0)
             for (int i = coordinatesList.length - 1; i >= 0; i--) {
@@ -62,8 +66,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         // Move the camera to starting point
         mMap.moveCamera(CameraUpdateFactory.newLatLng(coordinatesList[0]));
+        Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
+                .clickable(true).add(coordinatesList));
+        polyline1.setTag("A");
     }
 
+    /**
+     *
+     * @param fileName the name of the file user wants to inspect
+     * @return the ingredients of the file with the corresponding fileMame
+     */
     public String getLocationList(String fileName) {
         String coordinatesSoFar = "";
         try {
@@ -110,6 +122,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         return Double.parseDouble(strings[1]);
     }
 
+    /**
+     *
+     * @param s String array which you want to convert to LatLng[]
+     * @return the LatLng[] converted from the parameter
+     */
     public LatLng[] getLatLng(String[] s) {
         LatLng[] locationList = new LatLng[s.length];
         int i = 0;
@@ -120,5 +137,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             i++;
         }
         return locationList;
+    }
+
+    private void stylePolyLine(Polyline polyline) {
+        String type = "";
+        if(polyline.getTag() != null) {
+            type = polyline.getTag().toString();
+        }
+        switch (type) {
+            case "A":
+                polyline.setStartCap(
+                        new CustomCap(
+                                BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_light), 10));
+                break;
+            case "B":
+                polyline.setStartCap(new RoundCap());
+                break;
+        }
+
+        polyline.setEndCap(new RoundCap());
+        polyline.setWidth(12);
+        polyline.setColor(0xff000000);
+        polyline.setJointType(JointType.ROUND);
     }
 }
