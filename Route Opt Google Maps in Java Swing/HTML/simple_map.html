@@ -29,7 +29,7 @@
         padding-left: 10px;
       }
       #label {
-        font-size: 30px;
+        font-size: 15px;
         position: absolute;
         top: 15px; 
         right: 190px;
@@ -46,6 +46,8 @@
       <input onclick="clearMarkers();" type=button value="Hide Markers">
       <input onclick="showMarkers();" type=button value="Show All Markers">
       <input onclick="deleteMarkers();" type=button value="Delete Markers">
+      <input onclick="readFromFile();" type=button value="read">
+
      
     </div>
     <div id="map"></div>
@@ -96,7 +98,7 @@
         });
         markers.push(marker);
         
-        string += (("Point" + labelIndex + ": " + marker.getPosition()) + "\n");
+        string += ((marker.getPosition()) + "\n");
         //document.getElementById('Points').innerHTML = string;
         console.log(string);
         document.getElementById("label").innerHTML = string;
@@ -127,8 +129,18 @@
         document.getElementById("label").innerHTML = "";
         string = "";
         labelIndex = 1;
-
         markers = [];
+      }
+
+      function readFromFile() {
+        jQuery.get('/Users/canonal/Desktop/CS102 Group Project/CS102-Group-1F-Project/Route Opt Google Maps in Java Swing/HTML/result.txt', function(data) {
+          var locArr = data.split(",");
+          console.log(locArr);
+          //optional stuff to do after success
+        });
+
+
+        
       }
 
 
