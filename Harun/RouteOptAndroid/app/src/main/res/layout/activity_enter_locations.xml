@@ -8,47 +8,48 @@
     tools:context=".frontend.EnterLocationsActivity">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/selectFromMapBut"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:background="@color/colorButton"
+        android:onClick="selectFromMap"
         android:text="@string/select_from_map_button"
         android:textColor="@color/colorText"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintBottom_toTopOf="@+id/EnterCoordinatesButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/EnterCoordinatesButton"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:background="@color/colorButton"
         android:onClick="enterCoordinates"
         android:text="@string/enter_coordinates_button"
         android:textColor="@color/colorText"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
+        app:layout_constraintBottom_toTopOf="@+id/EnterLinkButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/selectFromMapBut" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/EnterLinkButton"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:background="@color/colorButton"
         android:text="@string/enter_link_button"
         android:textColor="@color/colorText"
-        app:layout_constraintBottom_toTopOf="@+id/button9"
+        app:layout_constraintBottom_toTopOf="@+id/editButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintTop_toBottomOf="@+id/EnterCoordinatesButton" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/editButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorButton"
@@ -58,12 +59,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button10"
+        app:layout_constraintStart_toEndOf="@+id/doneButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/doneButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorButton"
@@ -71,7 +72,7 @@
         android:text="@string/done_button"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button9"
+        app:layout_constraintEnd_toStartOf="@+id/editButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

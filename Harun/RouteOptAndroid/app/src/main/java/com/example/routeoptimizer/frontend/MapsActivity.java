@@ -1,8 +1,11 @@
 package com.example.routeoptimizer.frontend;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
+import android.location.Location;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.routeoptimizer.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,7 +26,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener {
     private FileInputStream fis;
     private String locationList;
     final String FILE_NAME = "optimizedList.txt";
@@ -57,13 +60,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
+        mMap.setMyLocationEnabled(true);
+        mMap.setOnMyLocationButtonClickListener(this);
+        mMap.setOnMyLocationClickListener(this);
         // Adding markers
         testButton();
-        if(coordinatesList.length > 0)
-            for (int i = coordinatesList.length - 1; i >= 0; i--) {
+        if(coordinatesList.length > 1) {
+            for (int i = 0; i < coordinatesList.length - 1; i++) {
+                if (i == 0) {
+                    mMap.addMarker(new MarkerOptions().position(coordinatesList[i]).title("Starting Point"));
+                    continue;
+                }
                 mMap.addMarker(new MarkerOptions().position(coordinatesList[i]).title((i + 1) + ". Location"));
+
             }
+        }
         // Move the camera to starting point
         mMap.moveCamera(CameraUpdateFactory.newLatLng(coordinatesList[0]));
         Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
@@ -159,5 +172,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         polyline.setWidth(12);
         polyline.setColor(0xff000000);
         polyline.setJointType(JointType.ROUND);
+    }
+
+    @Override
+    public void onMyLocationClick(@NonNull Location location) {
+        Toast.makeText(this, "Current location:\n" + location, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public boolean onMyLocationButtonClick() {
+        Toast.makeText(this, "MyLocation button clicked", Toast.LENGTH_SHORT).show();
+        // Return false so that we don't consume the event and the default behavior still occurs
+        // (the camera animates to the user's current position).
+        return false;
     }
 }

@@ -28,13 +28,19 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".frontend.SelectFromMapActivity"
+            android:label="@string/title_activity_select_from_map"></activity>
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
         <activity
             android:name=".frontend.MapsActivity"
-            android:parentActivityName=".frontend.EnterLocationsActivity"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:parentActivityName=".frontend.EnterLocationsActivity" />
         <activity
             android:name=".frontend.EditLocationsActivity"
             android:parentActivityName=".frontend.EnterLocationsActivity" />

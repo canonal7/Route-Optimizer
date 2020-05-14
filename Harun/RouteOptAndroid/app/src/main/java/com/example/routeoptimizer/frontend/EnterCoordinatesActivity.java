@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,7 +15,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import NodePack.Node;
 
 
 public class EnterCoordinatesActivity extends AppCompatActivity {
@@ -39,10 +37,13 @@ public class EnterCoordinatesActivity extends AppCompatActivity {
         FileInputStream fis = null;
         FileOutputStream fos = null;
 
-        EditText xCorText = findViewById(R.id.editText2);
-        EditText yCorText = findViewById(R.id.editText3);
+        EditText xCorText = findViewById(R.id.xCor);
+        EditText yCorText = findViewById(R.id.yCor);
         if(xCorText.getText().toString().trim().length() <= 0 || yCorText.getText().toString().trim().length() <= 0) {
             Toast.makeText(this, "Enter a value", Toast.LENGTH_LONG).show();
+        }
+        else if(Math.abs(Double.parseDouble(xCorText.getText().toString())) > 90 ||Math.abs(Double.parseDouble(yCorText.getText().toString())) > 180 ) {
+            Toast.makeText(this, "Please enter a valid value", Toast.LENGTH_LONG).show();
         }
         else {
             xCor = Double.parseDouble(xCorText.getText().toString());

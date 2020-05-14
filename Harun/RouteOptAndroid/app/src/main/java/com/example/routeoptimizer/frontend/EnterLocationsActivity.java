@@ -23,7 +23,6 @@ import NodePack.NodeList;
 public class EnterLocationsActivity extends AppCompatActivity {
 
     NodeList rawNodes = new NodeList();
-
     FileInputStream fis;
     FileOutputStream fos;
     String rawNodesString;
@@ -41,6 +40,11 @@ public class EnterLocationsActivity extends AppCompatActivity {
      * */
     public void enterCoordinates(View view) {
         Intent intent = new Intent(this, EnterCoordinatesActivity.class);
+        startActivity(intent);
+    }
+
+    public void selectFromMap(View view) {
+        Intent intent = new Intent(this, SelectFromMapActivity.class);
         startActivity(intent);
     }
 
@@ -63,7 +67,13 @@ public class EnterLocationsActivity extends AppCompatActivity {
 
         rawNodesString = getLocationList();
         // Checking if the location is empty or not
-        if (!rawNodesString.equals("")) {
+        if (rawNodesString.equals("")) {
+            Toast.makeText(this, "Please enter some values", Toast.LENGTH_LONG).show();
+        }
+        else if (rawNodesString.split("\n").length == 1) {
+            Toast.makeText(this, "Please enter more than 1 value", Toast.LENGTH_LONG).show();
+        }
+        else {
             // Splitting the String into a String array
             stringArray = rawNodesString.split("\n");
             // Adding the elements into the NodeList
@@ -92,8 +102,7 @@ public class EnterLocationsActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MapsActivity.class);
             startActivity(intent);
         }
-        else
-            Toast.makeText(this, "Please enter some values", Toast.LENGTH_LONG).show();
+
     }
 
     /**
@@ -171,6 +180,7 @@ public class EnterLocationsActivity extends AppCompatActivity {
             }
         }
     }
+
 
     public static NodeList algorithmNN( NodeList n )
     {

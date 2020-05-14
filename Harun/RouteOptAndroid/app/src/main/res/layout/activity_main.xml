@@ -42,7 +42,7 @@
         app:layout_constraintVertical_bias="0.3" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/exit_button"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@color/colorButton"
@@ -61,6 +61,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:background="@color/colorButton"
+        android:onClick="exitButtonAction"
         android:text="@string/quit_button"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"

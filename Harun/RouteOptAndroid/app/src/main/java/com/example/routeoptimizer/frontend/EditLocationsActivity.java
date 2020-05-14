@@ -10,6 +10,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.routeoptimizer.R;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -21,9 +23,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class EditLocationsActivity extends AppCompatActivity {
+public class EditLocationsActivity extends AppCompatActivity{
 
     private Spinner spinner;
+    MapView mapView = null;
     List<String> locationList = new ArrayList<>();
     String selectedNode = "";
     int indexOfSelectedLocation = 0;
@@ -34,6 +37,8 @@ public class EditLocationsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_locations);
+        // Obtaining mapView
+
         // Creating FileInputStream to read the file that contains previously added locations
         FileInputStream fis = null;
         // Finding the spinner class which visualizes the Array

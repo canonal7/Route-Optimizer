@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Route Optimizer</string>
-    <string name="settings_button">Settings</string>
-    <string name="quit_button">Quit</string>
-    <string name="enter_locations_button">Enter Locations</string>
+    <string name="settings_button">SETTINGS</string>
+    <string name="quit_button">QUIT</string>
+    <string name="enter_locations_button">ENTER LOCATIONS</string>
 
     <!-- Preference Titles -->
 
@@ -23,15 +23,15 @@
     <string name="previous">Previous</string>
     <string name="download_the_map_button">Download the Map</string>
     <string name="satellite_view_button">Satellite View</string>
-    <string name="map_location_button">Map Location</string>
+    <string name="map_location_button">MAP LOCATION</string>
     <string name="accuracy_level_button">Accuracy Level</string>
     <string name="select_from_map_button">Select From Map</string>
-    <string name="enter_coordinates_button">Enter Coordinates</string>
-    <string name="enter_link_button">Enter Link</string>
+    <string name="enter_coordinates_button">Enter COORDINATES</string>
+    <string name="enter_link_button">Enter LINK</string>
     <string name="done_button">Done</string>
-    <string name="edit_button">Edit</string>
-    <string name="enter_x_hint">X Coordinate</string>
-    <string name="enter_y_hint">Y Coordinate</string>
+    <string name="edit_button">EDIT</string>
+    <string name="enter_x_hint">Latitude</string>
+    <string name="enter_y_hint">Longitude</string>
     <string name="enter_button">Enter</string>
     <string name="radio_button_city">City</string>
     <string name="radio_button_country">Country</string>
@@ -45,5 +45,21 @@
     <string name="selectLocation">Select Location</string>
     <string name="title_activity_route_display">Map</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_select_from_map">Select From Map</string>
+
+    Copyright (C) 2012 The Android Open Source Project
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+    <!--    Permissions    -->
+    <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
+    <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
+    <string name="permission_required_toast">Location permission is required for this demo.</string>
 
 </resources>
