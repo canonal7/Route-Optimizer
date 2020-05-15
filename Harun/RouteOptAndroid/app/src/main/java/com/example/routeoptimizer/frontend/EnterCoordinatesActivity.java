@@ -34,15 +34,14 @@ public class EnterCoordinatesActivity extends AppCompatActivity {
         int index = 0;
         String coordinates;
         String coordinatesSoFar = "";
-        FileInputStream fis = null;
         FileOutputStream fos = null;
 
-        EditText xCorText = findViewById(R.id.xCor);
-        EditText yCorText = findViewById(R.id.yCor);
-        if(xCorText.getText().toString().trim().length() <= 0 || yCorText.getText().toString().trim().length() <= 0) {
+        EditText xCorText = findViewById(R.id.latitude);
+        EditText yCorText = findViewById(R.id.longitude);
+        if (xCorText.getText().toString().trim().length() <= 0 || yCorText.getText().toString().trim().length() <= 0) {
             Toast.makeText(this, "Enter a value", Toast.LENGTH_LONG).show();
         }
-        else if(Math.abs(Double.parseDouble(xCorText.getText().toString())) > 90 ||Math.abs(Double.parseDouble(yCorText.getText().toString())) > 180 ) {
+        else if (Math.abs(Double.parseDouble(xCorText.getText().toString())) > 90 ||Math.abs(Double.parseDouble(yCorText.getText().toString())) > 180 ) {
             Toast.makeText(this, "Please enter a valid value", Toast.LENGTH_LONG).show();
         }
         else {
@@ -56,52 +55,72 @@ public class EnterCoordinatesActivity extends AppCompatActivity {
             System.out.println(xCor);
             System.out.println(yCor);
             // Reading the prior data
-            try {
-                fis = openFileInput(FILE_NAME);
-                InputStreamReader isr = new InputStreamReader(fis);
-                BufferedReader br = new BufferedReader(isr);
-                StringBuilder sb = new StringBuilder();
-                String text;
-                while ((text = br.readLine()) != null) {
-                    sb.append(text).append("\n");
-                }
-                coordinatesSoFar = sb.toString();
-                coordinatesSoFar += coordinates + "\n";
-                System.out.println(coordinatesSoFar);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                if (fis != null) {
-                    try {
-                        fis.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
+            coordinatesSoFar = getContent(FILE_NAME);
+            // Adding the recent data
+            coordinatesSoFar += coordinates + "\n";
 
             // Saving the data
+            writeFile(FILE_NAME, coordinatesSoFar);
+        }
+    }
 
-            try {
-                fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
+    /**
+     *
+     * @param fileName the name of the file user wants to inspect
+     * @return the ingredients of the file with the corresponding fileMame
+     */
+    public String getContent(String fileName) {
+        FileInputStream fis = null;
+        String content = "";
+        try {
+            fis = openFileInput(fileName);
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+            while((text = br.readLine()) != null) {
+                sb.append(text).append("\n");
+            }
+            content = sb.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
                 try {
-                    fos.write(coordinatesSoFar.getBytes());
-                    Toast.makeText(this, "Coordinate data is saved.", Toast.LENGTH_LONG).show();
+                    fis.close();
                 } catch (IOException e) {
-                    Toast.makeText(this, "Upload failed, try again", Toast.LENGTH_LONG).show();
                     e.printStackTrace();
                 }
-            } catch (FileNotFoundException e) {
+            }
+        }
+        return content;
+    }
+
+    /**
+     * Overrides the String in 1st parameter with 2nd parameter
+     * @param fileName the name of the file
+     * @param s the string
+     */
+    public void writeFile(String fileName, String s) {
+        FileOutputStream fos = null;
+        try {
+            fos = openFileOutput(fileName, MODE_PRIVATE);
+            try {
+                fos.write(s.getBytes());
+                Toast.makeText(this, "Coordinate data is saved.", Toast.LENGTH_LONG).show();
+            } catch (IOException e) {
                 Toast.makeText(this, "Upload failed, try again", Toast.LENGTH_LONG).show();
                 e.printStackTrace();
-            } finally {
-                if (fos != null) {
-                    try {
-                        fos.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+            }
+        } catch (FileNotFoundException e) {
+            Toast.makeText(this, "Upload failed, try again", Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        } finally {
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         }
