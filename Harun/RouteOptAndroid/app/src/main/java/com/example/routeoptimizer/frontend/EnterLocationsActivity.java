@@ -60,11 +60,11 @@ public class EnterLocationsActivity extends AppCompatActivity {
      * Called when the user taps Done button
      */
     public void doneButtonAction(View view) {
-        /*
-         Calculations
-         Extracting the text to a String
-        */
 
+        // Calculations
+
+
+        // Extracting the text to a String
         rawNodesString = getLocationList();
         // Checking if the location is empty or not
         if (rawNodesString.equals("")) {
@@ -77,7 +77,6 @@ public class EnterLocationsActivity extends AppCompatActivity {
             // Splitting the String into a String array
             stringArray = rawNodesString.split("\n");
             // Adding the elements into the NodeList
-            System.out.println(stringArray[0]);
             for (String s : stringArray) {
                 // Getting the x value
                 double x = getX(s);
