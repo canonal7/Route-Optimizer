@@ -1,6 +1,7 @@
 package com.example.routeoptimizer.frontend;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.res.Resources;
@@ -32,7 +33,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener {
     private static final String TAG = MapsActivity.class.getSimpleName();
     FileInputStream fis = null;
     private String locationList;
@@ -91,13 +92,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 if (i == 0) {
                     mMap.addMarker(new MarkerOptions().position(coordinatesList[i]).title(" ").
                             snippet("Starting Point").icon(BitmapDescriptorFactory.
-                            defaultMarker(BitmapDescriptorFactory.HUE_BLUE))).showInfoWindow();
+                            defaultMarker(BitmapDescriptorFactory.HUE_AZURE))).showInfoWindow();
 
                     continue;
                 }
                 mMap.addMarker(new MarkerOptions().position(coordinatesList[i]).title(" ").
                         snippet((i + 1) + ". Location").icon(BitmapDescriptorFactory.
-                        defaultMarker(BitmapDescriptorFactory.HUE_BLUE))).showInfoWindow();
+                        defaultMarker(235.0f))).showInfoWindow();
             }
         }
         // Move the camera to starting point
