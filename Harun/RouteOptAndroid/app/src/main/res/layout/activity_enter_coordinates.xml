@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/ppie"
+    android:background="@mipmap/currentback"
     tools:context=".frontend.EnterCoordinatesActivity">
 
     <EditText
-        android:id="@+id/xCor"
+        android:id="@+id/latitude"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:background="@color/colorButton"
@@ -17,7 +17,7 @@
         android:inputType="numberSigned|number|numberDecimal"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/yCor"
+        app:layout_constraintEnd_toStartOf="@+id/longitude"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,7 +25,7 @@
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/yCor"
+        android:id="@+id/longitude"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:background="@color/colorButton"
@@ -36,7 +36,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/xCor"
+        app:layout_constraintStart_toEndOf="@+id/latitude"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.25"
         android:autofillHints="" />

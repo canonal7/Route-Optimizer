@@ -77,6 +77,19 @@ public class MainActivity extends AppCompatActivity {
         System.exit(0);
     }
 
+    /**
+     * Called when the user taps the Tutorial button
+     * @param view
+     */
+    public void tutorialStart(View view) {
+        Intent intent = new Intent(this, TutorialActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Resets the file named fileName
+     * @param filename the file you want to reset
+     */
     public void locationReset(String filename) {
         FileOutputStream fos = null;
         try {

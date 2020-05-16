@@ -23,6 +23,7 @@ import NodePack.NodeList;
 public class EnterLocationsActivity extends AppCompatActivity {
 
     NodeList rawNodes = new NodeList();
+    NodeList editedNodes = new NodeList();
     FileInputStream fis;
     FileOutputStream fos;
     String rawNodesString;
@@ -53,6 +54,9 @@ public class EnterLocationsActivity extends AppCompatActivity {
      */
     public void editLocations(View view) {
         Intent intent = new Intent(this, EditLocationsActivity.class);
+        if(! getLocationList().contains("."))
+            Toast.makeText(this ,"Please enter a value",Toast.LENGTH_LONG).show();
+        else
         startActivity(intent);
 
     }
@@ -60,11 +64,11 @@ public class EnterLocationsActivity extends AppCompatActivity {
      * Called when the user taps Done button
      */
     public void doneButtonAction(View view) {
-        /*
-         Calculations
-         Extracting the text to a String
-        */
 
+        // Calculations
+
+
+        // Extracting the text to a String
         rawNodesString = getLocationList();
         // Checking if the location is empty or not
         if (rawNodesString.equals("")) {
@@ -77,7 +81,6 @@ public class EnterLocationsActivity extends AppCompatActivity {
             // Splitting the String into a String array
             stringArray = rawNodesString.split("\n");
             // Adding the elements into the NodeList
-            System.out.println(stringArray[0]);
             for (String s : stringArray) {
                 // Getting the x value
                 double x = getX(s);
@@ -85,22 +88,31 @@ public class EnterLocationsActivity extends AppCompatActivity {
                 double y = getY(s);
                 rawNodes.add(new Node(x, y));
             }
+            // Copying the rawNodes into editedNodes
+            editedNodes = rawNodes;
             // Running the algorithm
-            rawNodes = algorithmNN(rawNodes);
-            rawNodes = rawNodes.calculateTwoOpt(rawNodes);
+            editedNodes = algorithmNN(editedNodes);
+            editedNodes = editedNodes.calculateTwoOpt(editedNodes);
             // Extracting the string from optimizedNodes
-            for (int i = 0; i < rawNodes.size(); i++) {
-                if (rawNodes.get(i) != null)
-                    optimizedNodesString += rawNodes.get(i).getX() + " " + rawNodes.get(i).getY() + "\n";
+            for (int i = 0; i < editedNodes.size(); i++) {
+                if (editedNodes.get(i) != null)
+                    optimizedNodesString += editedNodes.get(i).getX() + " " + editedNodes.get(i).getY() + "\n";
             }
-            optimizedNodesString = optimizedNodesString.substring(4);
-            System.out.println(optimizedNodesString);
+            System.out.println(optimizedNodesString + " Before null deletion");
+            if(optimizedNodesString.contains("null"))
+                optimizedNodesString = optimizedNodesString.substring(optimizedNodesString.indexOf("null") + 4);
+            System.out.println(optimizedNodesString + "After null deletion");
+
             // Writing the previously extracted string into a text file
             setOptimizedNodesString(OPTIMIZED_FILE_NAME);
 
             // Starting the Map
             Intent intent = new Intent(this, MapsActivity.class);
             startActivity(intent);
+            optimizedNodesString = "";
+            rawNodesString = "";
+            rawNodes = new NodeList();
+            editedNodes = new NodeList();
         }
 
     }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.routeoptimizer">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -16,7 +15,10 @@
         android:roundIcon="@mipmap/app_picture"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity
+            android:name=".frontend.TutorialActivity"
+            android:label="Tutorial"
+            android:parentActivityName=".frontend.MainActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -31,7 +33,8 @@
 
         <activity
             android:name=".frontend.SelectFromMapActivity"
-            android:label="@string/title_activity_select_from_map"></activity>
+            android:label="@string/title_activity_select_from_map"
+            android:parentActivityName=".frontend.EnterLocationsActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -43,18 +46,23 @@
             android:parentActivityName=".frontend.EnterLocationsActivity" />
         <activity
             android:name=".frontend.EditLocationsActivity"
+            android:label="Edit"
             android:parentActivityName=".frontend.EnterLocationsActivity" />
         <activity
             android:name=".frontend.MapLocationsActivity"
+            android:label="Map Locations"
             android:parentActivityName=".frontend.SettingsActivity" />
         <activity
             android:name=".frontend.EnterCoordinatesActivity"
+            android:label="Coordinates"
             android:parentActivityName=".frontend.EnterLocationsActivity" />
         <activity
             android:name=".frontend.SettingsActivity"
+            android:label="Settings"
             android:parentActivityName=".frontend.MainActivity" />
         <activity
             android:name=".frontend.EnterLocationsActivity"
+            android:label="Enter Locations"
             android:parentActivityName=".frontend.MainActivity" />
         <activity android:name=".frontend.MainActivity">
             <intent-filter>

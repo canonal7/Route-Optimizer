@@ -61,5 +61,7 @@
     <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
     <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
     <string name="permission_required_toast">Location permission is required for this demo.</string>
+    <string name="tutorial_button">Tutorial</string>
+    <string name="tutorial_text">Welcome to the Route Optimizer \n \n \n Here is a quick tutorial for you... \n \n \n The first location you select will be your starting point, so keep that in mind. \n \n \n You can select any location on the map by pressing on the marker until it turns green and then dropping it to wherever you please. \n \n \n The rest will be pretty self-explainatory \n \n \n Good luck and have fun in your grand tour...</string>
 
 </resources>

@@ -14,15 +14,18 @@ test1
 		36,388.06
 		Percentage Error: 31.83%
 		Time taken: 0.03 seconds
-		
-		
+
+	Distance calculated with NN + 2-opt
+	    27748.71
+		Percentage Error: 0.53%
+
 test 2
 	Tour of
 		Qatar
 	Size
 		194
 	Optimal Distance
-		9352
+		9,352
 	
 	In random order Distance
 		39,555.63
@@ -32,6 +35,10 @@ test 2
 		11,892.89
 		Percentage Error: 27.17%
 		Time taken: 0.05 seconds
+
+	Distance calculated with NN + 2-opt
+    	9,888.96
+        Percentage Error: 5.74%
 		
 test 3
 	Tour of 
@@ -49,6 +56,10 @@ test 3
 		119,278.23
 		Percentage Error: 25.10%
 		Time taken: 0.2 seconds
+
+	Distance calculated with NN + 2-opt
+        103,745.96
+        Percentage Error: 8.81%
 
 test 4
 	Tour Of

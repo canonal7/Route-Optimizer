@@ -1,10 +1,14 @@
 package com.example.routeoptimizer.frontend;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.routeoptimizer.R;
@@ -16,6 +20,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CustomCap;
 import com.google.android.gms.maps.model.JointType;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapStyleOptions;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -25,9 +31,11 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener {
-    private FileInputStream fis;
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener {
+    private static final String TAG = MapsActivity.class.getSimpleName();
+    FileInputStream fis = null;
     private String locationList;
     final String FILE_NAME = "optimizedList.txt";
     private GoogleMap mMap;
@@ -60,7 +68,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        try {
+            // Customise the styling of the base map using a JSON object defined
+            // in a raw resource file.
+            boolean success = googleMap.setMapStyle(
+                    MapStyleOptions.loadRawResourceStyle(
+                            this, R.raw.style_json));
 
+            if (!success) {
+                Log.e(TAG, "Style parsing failed.");
+            }
+        } catch (Resources.NotFoundException e) {
+            Log.e(TAG, "Can't find style. Error: ", e);
+        }
         mMap = googleMap;
         mMap.setMyLocationEnabled(true);
         mMap.setOnMyLocationButtonClickListener(this);
@@ -70,15 +90,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if(coordinatesList.length > 1) {
             for (int i = 0; i < coordinatesList.length - 1; i++) {
                 if (i == 0) {
-                    mMap.addMarker(new MarkerOptions().position(coordinatesList[i]).title("Starting Point"));
+                    mMap.addMarker(new MarkerOptions().position(coordinatesList[i]).title(" ").
+                            snippet("Starting Point").icon(BitmapDescriptorFactory.
+                            defaultMarker(BitmapDescriptorFactory.HUE_AZURE))).showInfoWindow();
+
                     continue;
                 }
-                mMap.addMarker(new MarkerOptions().position(coordinatesList[i]).title((i + 1) + ". Location"));
-
+                mMap.addMarker(new MarkerOptions().position(coordinatesList[i]).title(" ").
+                        snippet((i + 1) + ". Location").icon(BitmapDescriptorFactory.
+                        defaultMarker(235.0f))).showInfoWindow();
             }
         }
         // Move the camera to starting point
         mMap.moveCamera(CameraUpdateFactory.newLatLng(coordinatesList[0]));
+        // Creating the PolyLine
         Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
                 .clickable(true).add(coordinatesList));
         polyline1.setTag("A");
@@ -90,6 +115,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * @return the ingredients of the file with the corresponding fileMame
      */
     public String getLocationList(String fileName) {
+
         String coordinatesSoFar = "";
         try {
             fis = openFileInput(fileName);
@@ -170,7 +196,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         polyline.setEndCap(new RoundCap());
         polyline.setWidth(12);
-        polyline.setColor(0xff000000);
+        polyline.setColor(Color.CYAN);
         polyline.setJointType(JointType.ROUND);
     }
 

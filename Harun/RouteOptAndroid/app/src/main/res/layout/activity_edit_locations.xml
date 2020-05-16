@@ -4,26 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/ppie"
+    android:background="@mipmap/currentback"
     tools:context=".frontend.EditLocationsActivity">
-
-    <Spinner
-        android:id="@+id/locationsCollection"
-        android:layout_width="260dp"
-        android:layout_height="53dp"
-        android:background="@color/colorPrimary"
-        android:popupBackground="@color/colorPrimary"
-        android:scrollbarThumbHorizontal="@color/colorButton"
-        android:scrollbarThumbVertical="@color/colorButton"
-        android:scrollbarTrackHorizontal="@color/colorButton"
-        android:scrollbarTrackVertical="@color/colorButton"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11" />
 
     <Button
         android:id="@+id/removeBut"
@@ -36,27 +18,40 @@
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.306" />
+        app:layout_constraintVertical_bias="0.938" />
 
     <fragment
         android:id="@+id/showLocations"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        map:layout_constraintBottom_toBottomOf="parent"
-        map:layout_constraintEnd_toEndOf="parent"
-        map:layout_constraintHorizontal_bias="0.0"
-        map:layout_constraintStart_toStartOf="parent"
-        map:layout_constraintTop_toTopOf="parent"
-        map:layout_constraintVertical_bias="1.0"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.84000003"
+        app:layout_constraintVertical_bias="1.0"
         tools:context=".frontend.MapsActivity" />
+
+    <Spinner
+        android:id="@+id/locationsCollection"
+        android:layout_width="260dp"
+        android:layout_height="53dp"
+        android:background="@color/colorButton"
+        android:popupBackground="@color/colorButton"
+        android:scrollbarThumbHorizontal="@color/colorButton"
+        android:scrollbarThumbVertical="@color/colorButton"
+        android:scrollbarTrackHorizontal="@color/colorButton"
+        android:scrollbarTrackVertical="@color/colorButton"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
