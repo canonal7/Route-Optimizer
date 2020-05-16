@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -32,7 +33,7 @@
         font-size: 15px;
         position: absolute;
         top: 15px; 
-        right: 190px;
+        right: 125px;
       	float: right;
       	width: 10em;
       	text-align: left;
@@ -74,6 +75,16 @@
           mapTypeId: 'hybrid'
         });
 
+        //Hopefully this works like a constructor.
+        //I am hoping that as we read the data from txt File, Several Location objects will
+        //be instantiazed with the given x (longtitude) & y (latitude) values.
+        //these should be stored in an array of some sort and when drawing, the x & y values 
+        //will be used. HOPEFULLY.
+        function Location( longitude, latitude ){
+            this.longitude = longitude;
+            this.latitude = latitude;
+        }
+
         // This event listener will call addMarker() when the map is clicked.
         map.addListener('click', function(event) {
           addMarker(event.latLng);
@@ -98,7 +109,7 @@
         });
         markers.push(marker);
         
-        string += ((marker.getPosition()) + "\n");
+        string += (marker.getPosition().lat() + " " + marker.getPosition().lng() + "\n");
         //document.getElementById('Points').innerHTML = string;
         console.log(string);
         document.getElementById("label").innerHTML = string;
@@ -152,4 +163,3 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjo9_uBERd5oxWphvLurPH-zOFkW_tZig&callback=initMap">
     </script>
   </body>
-</html>
