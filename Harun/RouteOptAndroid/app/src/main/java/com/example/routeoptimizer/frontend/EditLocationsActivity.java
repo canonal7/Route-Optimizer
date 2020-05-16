@@ -176,8 +176,8 @@ public class EditLocationsActivity extends AppCompatActivity implements OnMapRea
             @Override
             public boolean onMarkerClick(Marker marker) {
                 String coordinate = marker.getPosition().latitude + " " + marker.getPosition().longitude;
-                for (int i = 0; i < soFarArray.length; i++) {
-                    if(soFarArray[i].equals(coordinate)) {
+                for (int i = 0; i < locationList.size(); i++) {
+                    if(locationList.get(i).equals(coordinate)) {
                         spinner.setSelection(i);
                         break;
                     }
@@ -194,7 +194,7 @@ public class EditLocationsActivity extends AppCompatActivity implements OnMapRea
      */
     public void moveCamera(double x, double y) {
         LatLng lng = new LatLng(x,y);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lng, 10));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lng, 6));
     }
 
     /**
@@ -245,7 +245,7 @@ public class EditLocationsActivity extends AppCompatActivity implements OnMapRea
             fos = openFileOutput(fileName, MODE_PRIVATE);
             try {
                 fos.write(s.getBytes());
-                Toast.makeText(this, "Coordinate data is saved.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Coordinate data is updated.", Toast.LENGTH_LONG).show();
             } catch (IOException e) {
                 Toast.makeText(this, "Upload failed, try again", Toast.LENGTH_LONG).show();
                 e.printStackTrace();
