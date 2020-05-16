@@ -2,6 +2,7 @@ package GUI_Package;
 
 import Edge_Package.*;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,7 +11,7 @@ public class EnterLocationsFrame extends JFrame
     // properties
     JFrame thisFrame, parent;
     JPanel mainPanel;
-    JLabel title;
+    JLabel title, background;
     JButton selectFromMap, enterCoordinates, enterLink, done, edit, back;
     ActionListener actionListener;
     EdgeList edges;
@@ -34,7 +35,9 @@ public class EnterLocationsFrame extends JFrame
 
         // -------start of creating components------
         title = new JLabel( "Enter Locations" );
-        title.setBounds( 40, 20, 300, 20 );
+        title.setBounds( 40, 20, 300, 40 );
+        title.setForeground( Color.WHITE );
+        title.setFont( title.getFont().deriveFont(30f));
 
         selectFromMap = new JButton( "Select From Map" );
         selectFromMap.setBounds( 40, 140, 140, 40);
@@ -61,6 +64,12 @@ public class EnterLocationsFrame extends JFrame
         done.addActionListener( actionListener );
         // -------end of creating components------
 
+        // creating the background
+        ImageIcon icon = new ImageIcon("src\\Images\\currentback.png");
+        background = new JLabel( "" );
+        background.setIcon( icon );
+        background.setBounds(0,0,500,625);
+
         // adding everything into the main panel
         mainPanel.add( title );
         mainPanel.add( selectFromMap );
@@ -69,6 +78,7 @@ public class EnterLocationsFrame extends JFrame
         mainPanel.add( back );
         mainPanel.add( edit );
         mainPanel.add( done );
+        mainPanel.add( background );
 
 
         add( mainPanel );
@@ -101,7 +111,7 @@ public class EnterLocationsFrame extends JFrame
                 edges.nearestNeighbor();
                 edges.calculateTwoOpt();
                 System.out.println( "nodes are " + edges.extractNodeList() );
-                edges.extractToFile( "C:\\Users\\halit\\Desktop\\Pc UI\\src\\Txt_Files\\Ordered_Nodes.txt");
+                edges.extractToFile( "src\\Txt_Files\\Ordered_Nodes.txt");
 
             }
             else if( actionEvent.getSource() == edit )

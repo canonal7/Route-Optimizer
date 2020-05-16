@@ -1,6 +1,7 @@
 package GUI_Package;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ public class SettingsFrame extends JFrame
 {
     // properties
     JFrame parent;
-    JLabel settings;
+    JLabel title, background;
     JPanel mainPanel;
     JButton accuracyLevel, mapLocation, back;
     JRadioButton downloadMap, satelliteView;
@@ -33,8 +34,11 @@ public class SettingsFrame extends JFrame
 
 
         // -------start of creating components------
-        settings = new JLabel( "Settings" );
-        settings.setBounds( 40, 20, 300, 20);
+        title = new JLabel( "Settings" );
+        title.setBounds( 40, 20, 300, 40);
+        title.setForeground( Color.WHITE );
+        title.setFont( title.getFont().deriveFont(30f));
+
 
         downloadMap = new JRadioButton( "Download Map" );
         downloadMap.setBounds(40, 140, 125, 40);
@@ -53,14 +57,21 @@ public class SettingsFrame extends JFrame
         back.addActionListener( actionListener );
         // -------end of creating components------
 
+        // creating the background
+        ImageIcon icon = new ImageIcon("src\\Images\\currentback.png");
+        background = new JLabel( "" );
+        background.setIcon( icon );
+        background.setBounds(0,0,500,625);
+
 
         // putting every component into the main panel
         mainPanel.add( downloadMap );
         mainPanel.add( satelliteView );
-        mainPanel.add( settings );
+        mainPanel.add( title );
         mainPanel.add( accuracyLevel );
         mainPanel.add( mapLocation );
         mainPanel.add( back );
+        mainPanel.add( background );
 
         add( mainPanel );
         setResizable(false);

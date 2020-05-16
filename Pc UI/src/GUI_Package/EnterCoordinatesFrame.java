@@ -1,6 +1,7 @@
 package GUI_Package;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -14,7 +15,7 @@ public class EnterCoordinatesFrame extends JFrame
     JFrame thisFrame, parent;
     JPanel mainPanel;
     JTextField latitudeField, longitudeField;
-    JLabel title;
+    JLabel title,background;
     JButton back, enter;
     File unorderedNodes;
 
@@ -38,7 +39,9 @@ public class EnterCoordinatesFrame extends JFrame
 
         // -------start of creating components------
         title = new JLabel( "Enter Coordinates" );
-        title.setBounds( 40, 20, 300, 20 );
+        title.setBounds( 40, 20, 300, 40 );
+        title.setForeground( Color.WHITE );
+        title.setFont( title.getFont().deriveFont(30f));
 
         latitudeField = new JTextField( "Latitude" );
         latitudeField.setBounds( 80, 240, 140, 40);
@@ -57,6 +60,11 @@ public class EnterCoordinatesFrame extends JFrame
         enter.addActionListener( actionListener );
         // -------end of creating components------
 
+        // creating the background
+        ImageIcon icon = new ImageIcon("src\\Images\\currentback.png");
+        background = new JLabel( "" );
+        background.setIcon( icon );
+        background.setBounds(0,0,500,625);
 
         // adding every component into the main component
         mainPanel.add( title );
@@ -64,6 +72,7 @@ public class EnterCoordinatesFrame extends JFrame
         mainPanel.add( longitudeField );
         mainPanel.add( back );
         mainPanel.add( enter );
+        mainPanel.add( background );
 
         createFile();
 
@@ -77,7 +86,7 @@ public class EnterCoordinatesFrame extends JFrame
     {
         try
         {
-            unorderedNodes = new File( "C:\\Users\\halit\\Desktop\\Pc UI\\src\\Txt_Files\\Unordered_Nodes.txt" );
+            unorderedNodes = new File( "src\\Txt_Files\\Unordered_Nodes.txt" );
             if( !unorderedNodes.exists())
                 unorderedNodes.createNewFile();
         } catch ( java.io.IOException e)

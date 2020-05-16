@@ -3,6 +3,7 @@ package GUI_Package;
 import com.sun.tools.javac.Main;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -12,7 +13,7 @@ public class MainFrame extends JFrame
     // properties
     JFrame thisFrame;
     JPanel mainPanel;
-    JLabel title;
+    JLabel title, background;
     JButton enterLocations, settings, quit;
     ButtonActionListener actionListener;
 
@@ -33,8 +34,10 @@ public class MainFrame extends JFrame
         mainPanel.setLayout(null);
 
         // -------start of creating components------
-        title = new JLabel( "Route optimizer " );
-        title.setBounds( 40, 20, 300, 20);
+        title = new JLabel( "Route Optimizer " );
+        title.setBounds( 40, 20, 300, 40);
+        title.setForeground( Color.WHITE );
+        title.setFont( title.getFont().deriveFont(30f));
 
         enterLocations = new JButton( "Enter Locations" );
         enterLocations.setBounds( 40, 140, 125, 40);
@@ -49,11 +52,21 @@ public class MainFrame extends JFrame
         quit.addActionListener( actionListener );
         // -------end of creating components------
 
+        // creating the background
+        ImageIcon icon = new ImageIcon("src\\Images\\currentback.png");
+        background = new JLabel( "" );
+        background.setIcon( icon );
+        background.setBounds(0,0,500,625);
+
+
         // adding every component to the main panel
         mainPanel.add( quit );
         mainPanel.add( settings );
         mainPanel.add( title );
         mainPanel.add( enterLocations );
+        mainPanel.add( background );
+
+
 
         add( mainPanel );
         setResizable(false);
