@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -32,7 +33,7 @@
         font-size: 15px;
         position: absolute;
         top: 15px; 
-        right: 190px;
+        right: 125px;
       	float: right;
       	width: 10em;
       	text-align: left;
@@ -109,7 +110,7 @@
         });
         markers.push(marker);
         
-        string += ((marker.getPosition()) + "\n");
+        string += (marker.getPosition().lat() + " " + marker.getPosition().lng() + "\n");
         //document.getElementById('Points').innerHTML = string;
         console.log(string);
         document.getElementById("label").innerHTML = string;
@@ -163,4 +164,3 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjo9_uBERd5oxWphvLurPH-zOFkW_tZig&callback=initMap">
     </script>
   </body>
-</html>
