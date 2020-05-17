@@ -1,6 +1,8 @@
 package GUI_Package;
 
 import Edge_Package.*;
+import MapDraw.CreateHTML;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,11 +17,13 @@ public class EnterLocationsFrame extends JFrame
     JButton selectFromMap, enterCoordinates, enterLink, done, edit, back;
     ActionListener actionListener;
     EdgeList edges;
+    CreateHTML createHTML;
 
     // constructor
     public EnterLocationsFrame( JFrame parent)
     {
         super( "Route Optimizer" );
+        createHTML = new CreateHTML();
 
         thisFrame = this;
         this.parent = parent;
@@ -86,6 +90,9 @@ public class EnterLocationsFrame extends JFrame
         setVisible( true );
     }
 
+
+
+
     public class ButtonActionListener implements ActionListener
     {
         @Override
@@ -93,6 +100,7 @@ public class EnterLocationsFrame extends JFrame
         {
             if( actionEvent.getSource() == selectFromMap )
             {
+                createMap( thisFrame );
 
             }
             else if( actionEvent.getSource() == enterCoordinates )
@@ -111,7 +119,7 @@ public class EnterLocationsFrame extends JFrame
                 edges.nearestNeighbor();
                 edges.calculateTwoOpt();
                 System.out.println( "nodes are " + edges.extractNodeList() );
-                edges.extractToFile( "src\\Txt_Files\\Ordered_Nodes.txt");
+                createHTML.overwriteFile( "src/Map_Files/HTML/simple_map.html", edges.extractNodeList());
 
             }
             else if( actionEvent.getSource() == edit )
@@ -125,5 +133,36 @@ public class EnterLocationsFrame extends JFrame
                 dispose();
             }
         }
+    }
+
+    public void createMap( JFrame parent )
+    {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Windows".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(MapFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new MapFrame( parent ).setVisible(true);
+                setVisible( false );
+                dispose();
+            }
+        });
     }
 }

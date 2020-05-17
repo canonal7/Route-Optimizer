@@ -189,33 +189,6 @@ public class NodeList
         return edges;
     }
 
-    /**
-     * Extracts the nodes to a file line by line, in the format of "y coordinate" + " " + "x coordinate"
-     * @param pathway the pathway to the file
-     */
-    public void extractToFile( String pathway )
-    {
-        File orderedFile = new File( pathway );
-        try {
-            orderedFile.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            FileWriter myWriter = new FileWriter( orderedFile );
-            for( int n = 0; n < size(); n++)
-            {
-                System.out.println("Wrote");
-                myWriter.write( nodes.get(n).getX() + " " + nodes.get(n).getY() + "\n" );
-            }
-            myWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-    }
-
 
 
 

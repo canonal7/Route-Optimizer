@@ -185,15 +185,6 @@ public class EdgeList implements EdgeListInterface
         return total;
     }
 
-    /**
-     * creates a nodelist to call its method
-     * @param pathway the pathway of the file
-     */
-    public void extractToFile( String pathway )
-    {
-        NodeList temp = extractNodeList();
-        temp.extractToFile( pathway );
-    }
 
 
 }

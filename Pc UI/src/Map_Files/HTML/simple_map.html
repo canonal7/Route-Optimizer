@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -66,16 +65,40 @@
       var labelIndex = 1;
       var string = "";
 
-      function initMap() {
-        var bilkent = {lat: 39.878040, lng: 32.748825};
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: {lat: 52.005803580287896, lng: 50.71761137513144},
+    mapTypeId: 'terrain'
+  });
 
-        map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
-          center: bilkent,
-          mapTypeId: 'hybrid'
-        });
+  var flightPlanCoordinates = [
+{lat: 52.005803580287896, lng: 50.71761137513144},
+{lat: 52.005803580287896, lng: 50.71761137513144},
+{lat: 53.49519024007465, lng: 45.26839262513144},
+{lat: 58.68318020527791, lng: 44.91683012513144},
+{lat: 53.8077427644471, lng: 61.61604887513144},
+{lat: 52.005803580287896, lng: 50.71761137513144}  ];
+  var flightPath = new google.maps.Polyline({
+    path: flightPlanCoordinates,
+    geodesic: true,
+    strokeColor: '#FF0000',
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+
+  flightPath.setMap(map);
 
 
+        //Hopefully this works like a constructor.
+        //I am hoping that as we read the data from txt File, Several Location objects will
+        //be instantiazed with the given x (longtitude) & y (latitude) values.
+        //these should be stored in an array of some sort and when drawing, the x & y values 
+        //will be used. HOPEFULLY.
+        function Location( longitude, latitude ){
+            this.longitude = longitude;
+            this.latitude = latitude;
+        }
 
         // This event listener will call addMarker() when the map is clicked.
         map.addListener('click', function(event) {
@@ -85,6 +108,8 @@
 
         });
 
+        
+        
       }
 
       // Adds a marker to the map and push to the array.

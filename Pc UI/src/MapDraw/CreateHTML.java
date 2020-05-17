@@ -10,13 +10,17 @@ public class CreateHTML {
     //properties.
 
     //constructors.
+    public CreateHTML()
+    {
+
+    }
 
     //methods.
-    public String intializeCoordinate( NodeList ndList ){
+    private String intializeCoordinate( NodeList ndList ){
         return "{lat: " + ndList.get( 0 ).getX() + "," + " lng: " + ndList.get( 0 ).getY() + "}," ;
     }
 
-    public String createLatLng( NodeList ndList ){
+    private String createLatLng( NodeList ndList ){
         String holder = "{lat: " + ndList.get( 0 ).getX() + "," + " lng: " + ndList.get( 0 ).getY() + "}";
 
         for( int i = 0; i < ndList.size(); i++ ){
@@ -25,7 +29,7 @@ public class CreateHTML {
 
         String initMap = "function initMap() {\n" +
                 "  var map = new google.maps.Map(document.getElementById('map'), {\n" +
-                "    zoom: 3,\n" +
+                "    zoom: 12,\n" +
                 "    center: "+ this.intializeCoordinate( ndList ) + "\n" +
                 "    mapTypeId: 'terrain'\n" +
                 "  });\n" +
@@ -41,8 +45,7 @@ public class CreateHTML {
                 "    strokeWeight: 2\n" +
                 "  });\n" +
                 "\n" +
-                "  flightPath.setMap(map);\n" +
-                "}";
+                "  flightPath.setMap(map);\n";
 
         return initMap;
     }
