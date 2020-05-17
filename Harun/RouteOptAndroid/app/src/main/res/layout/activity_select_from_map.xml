@@ -27,6 +27,7 @@
         android:background="@color/colorButton"
         android:onClick="enterLocation"
         android:text="@string/selectButton"
+        android:textColor="@color/colorText"
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintStart_toStartOf="parent"
