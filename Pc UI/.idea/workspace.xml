@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c16d650-9720-485a-98c5-3aabc6ed30f5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pc UI/META-INF/Pc UI.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pc UI/Txt_Files/Unordered_Nodes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pc UI/Txt_Files/Unordered_Nodes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Edge_Package/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Edge_Package/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Edge_Package/EdgeInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Edge_Package/EdgeInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Edge_Package/EdgeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Edge_Package/EdgeList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Edge_Package/EdgeListInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Edge_Package/EdgeListInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI_Package/EnterCoordinatesFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/EnterCoordinatesFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI_Package/EnterLocationsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/EnterLocationsFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI_Package/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI_Package/MapFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/MapFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI_Package/SettingsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/SettingsFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MapDraw/CreateHTML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapDraw/CreateHTML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node_Package/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node_Package/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node_Package/NodeInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node_Package/NodeInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node_Package/NodeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node_Package/NodeList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Txt_Files/Unordered_Nodes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Txt_Files/Unordered_Nodes.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +30,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Map_Files/lib/MyLicense-1.0.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -84,11 +72,26 @@
   <component name="SvnConfiguration">
     <configuration />
   </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5c16d650-9720-485a-98c5-3aabc6ed30f5" name="Default Changelist" comment="" />
+      <created>1589838807842</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589838807842</updated>
+    </task>
+    <servers />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="179" key="#Project_Structure" timestamp="1589741011954">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="736" y="241" key="#Project_Structure" timestamp="1589838821847">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="552" y="179" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1589741011954" />
+    <state x="736" y="241" key="#Project_Structure/0.0.2560.1400@0.0.2560.1400" timestamp="1589838821847" />
+    <state x="1130" y="589" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1589838847979">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1130" y="589" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1589838847979" />
     <state x="388" y="237" key="FileChooserDialogImpl" timestamp="1589741006426">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -113,10 +116,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589739817868" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1589832206549">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="875" y="464" key="com.intellij.ide.util.TipDialog" timestamp="1589838922506">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589832206549" />
+    <state x="875" y="464" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1589838922506" />
     <state x="1058" y="167" width="737" height="606" key="find.popup" timestamp="1589833898536">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
