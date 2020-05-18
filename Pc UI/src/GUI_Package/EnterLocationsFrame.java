@@ -10,6 +10,11 @@ import java.awt.event.ActionListener;
 
 public class EnterLocationsFrame extends JFrame
 {
+    // constants
+    final String unorderedNodesPath = "src/Txt_Files/Unordered_Nodes.txt";
+    final String backgroundPath = "src\\Images\\currentback.png";
+    final String mapHTMLPath = "src/Map_Files/HTML/simple_map.html";
+
     // properties
     JFrame thisFrame, parent, mapFrame;
     JPanel mainPanel;
@@ -69,7 +74,7 @@ public class EnterLocationsFrame extends JFrame
         // -------end of creating components------
 
         // creating the background
-        ImageIcon icon = new ImageIcon("src\\Images\\currentback.png");
+        ImageIcon icon = new ImageIcon(backgroundPath);
         background = new JLabel( "" );
         background.setIcon( icon );
         background.setBounds(0,0,500,625);
@@ -100,6 +105,7 @@ public class EnterLocationsFrame extends JFrame
         {
             if( actionEvent.getSource() == selectFromMap )
             {
+                createHTML.returnToOgHTML( mapHTMLPath );
                 createMap( thisFrame );
                 setVisible( false );
                 dispose();
@@ -120,8 +126,8 @@ public class EnterLocationsFrame extends JFrame
                 edges = EdgeList.createFromText();
                 edges.nearestNeighbor();
                 edges.calculateTwoOpt();
-                System.out.println( "nodes are " + edges.extractNodeList() );
-                createHTML.overwriteFile( "src/Map_Files/HTML/simple_map.html", edges.extractNodeList());
+                //System.out.println( "nodes are " + edges.extractNodeList() );
+                createHTML.overwriteFile( mapHTMLPath, edges.extractNodeList());
                 createMap( thisFrame );
                 setVisible( false );
                 dispose();

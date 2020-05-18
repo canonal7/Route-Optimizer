@@ -7,10 +7,6 @@ import MapDraw.CreateHTML;
 import com.kingaspx.util.BrowserUtil;
 import com.kingaspx.version.Version;
 import com.teamdev.jxbrowser.chromium.Browser;
-import com.teamdev.jxbrowser.chromium.dom.By;
-import com.teamdev.jxbrowser.chromium.dom.DOMDocument;
-import com.teamdev.jxbrowser.chromium.dom.DOMElement;
-import com.teamdev.jxbrowser.chromium.dom.DOMInputElement;
 import com.teamdev.jxbrowser.chromium.events.ConsoleEvent;
 import com.teamdev.jxbrowser.chromium.events.FinishLoadingEvent;
 import com.teamdev.jxbrowser.chromium.events.LoadAdapter;
@@ -18,14 +14,9 @@ import com.teamdev.jxbrowser.chromium.events.TitleEvent;
 import com.teamdev.jxbrowser.chromium.swing.BrowserView;
 import java.awt.BorderLayout;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.File;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import javax.swing.*;
 
@@ -155,7 +146,7 @@ public class MapFrame  extends javax.swing.JFrame  {
         parent.setVisible( true );
         this.setVisible( false );
         CreateHTML createHTML = new CreateHTML();
-        createHTML.returnToOgHTML( "src/Map_Files/HTML/simple_map.html" );
+        createHTML.returnToOgHTML( mapHTMLPath );
     }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -167,6 +158,11 @@ public class MapFrame  extends javax.swing.JFrame  {
     private javax.swing.JPanel map_panel;
     private JFrame parent;
     // End of variables declaration//GEN-END:variables
+
+    // constants
+    final String unorderedNodesPath = "src/Txt_Files/Unordered_Nodes.txt";
+    final String mapHTMLPath = "src/Map_Files/HTML/simple_map.html";
+
 
     Browser browser;
     BrowserView view;
@@ -202,7 +198,7 @@ public class MapFrame  extends javax.swing.JFrame  {
             }
         });
 
-        File simple_MapHTML = new File( "src/Map_Files/HTML/simple_map.html" );
+        File simple_MapHTML = new File( mapHTMLPath );
         browser.loadURL( simple_MapHTML.getAbsolutePath() );
     }
 
@@ -210,11 +206,10 @@ public class MapFrame  extends javax.swing.JFrame  {
     {
         try
         {
-            String fileName = "src/Txt_Files/Unordered_Nodes.txt";
-            FileWriter pw = new FileWriter(fileName, true);
+            FileWriter pw = new FileWriter(unorderedNodesPath, true);
             pw.write(s);
             pw.close();
-            System.out.println(" Done");
+            System.out.println("Printed to file");
         }
         catch(FileNotFoundException e)
         {

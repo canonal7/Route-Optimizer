@@ -1,6 +1,7 @@
 package Edge_Package;
 
 import Node_Package.Node;
+
 public class Edge implements EdgeInterface
 {
     // properties
@@ -13,9 +14,7 @@ public class Edge implements EdgeInterface
     {
         this.startNode = startNode;
         this.endNode = endNode;
-
         distance = startNode.calculateDistanceBTW( endNode );
-
     }
 
 
@@ -53,6 +52,4 @@ public class Edge implements EdgeInterface
     {
         return "(" + startNode + "," + endNode + ")";
     }
-
-
 }

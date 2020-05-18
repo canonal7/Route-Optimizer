@@ -4,10 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class SettingsFrame extends JFrame
 {
+    // constants
+    final String backgroundPath = "src\\Images\\currentback.png";
+
     // properties
     JFrame parent;
     JLabel title, background;
@@ -58,7 +60,7 @@ public class SettingsFrame extends JFrame
         // -------end of creating components------
 
         // creating the background
-        ImageIcon icon = new ImageIcon("src\\Images\\currentback.png");
+        ImageIcon icon = new ImageIcon( backgroundPath );
         background = new JLabel( "" );
         background.setIcon( icon );
         background.setBounds(0,0,500,625);

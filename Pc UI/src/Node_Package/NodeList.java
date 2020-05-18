@@ -1,12 +1,15 @@
 package Node_Package;
-import Edge_Package.Edge;
 
+import Edge_Package.Edge;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NodeList
 {
+    // constants
+    final String unorderedNodesPath = "src/Txt_Files/Unordered_Nodes.txt";
+
     // properties
     ArrayList<Node> nodes;
     double distance;
@@ -150,13 +153,10 @@ public class NodeList
      */
     public void readNodesFromFile()
     {
-        int startIndex;
-        int endIndex;
         String s;
-        String s1;
         NodeList temp = new NodeList();
 
-        File file = new File( "src/Txt_Files/Unordered_Nodes.txt" );
+        File file = new File( unorderedNodesPath );
         FileReader fileReader = null;
         try
         {

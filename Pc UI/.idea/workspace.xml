@@ -3,7 +3,31 @@
   <component name="ChangeListManager">
     <list default="true" id="5c16d650-9720-485a-98c5-3aabc6ed30f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locations.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pc UI/Map_Files/HTML/result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pc UI/Map_Files/HTML/simple_map.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pc UI/Map_Files/HTML/simple_map.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pc UI/Map_Files/HTML/trial.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pc UI/Txt_Files/Unordered_Nodes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pc UI/Txt_Files/Unordered_Nodes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Edge_Package/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Edge_Package/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Edge_Package/EdgeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Edge_Package/EdgeList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI_Package/EnterCoordinatesFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/EnterCoordinatesFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI_Package/EnterLocationsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/EnterLocationsFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI_Package/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI_Package/MapFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/MapFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI_Package/SettingsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/SettingsFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MapDraw/CreateHTML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapDraw/CreateHTML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MapDraw/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map_Files/HTML/result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map_Files/HTML/simple_map.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map_Files/HTML/simple_map.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map_Files/HTML/trial.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map_Files/locations.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map_Files/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map_Files/src/com/canonal/menu/Menu.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map_Files/src/com/canonal/menu/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map_Files/src/com/canonal/menu/simple_map.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Node_Package/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node_Package/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Node_Package/NodeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node_Package/NodeList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Txt_Files/Unordered_Nodes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Txt_Files/Unordered_Nodes.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,29 +102,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="388" y="237" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589741006426" />
-    <state width="1882" height="234" key="GridCell.Tab.0.bottom" timestamp="1589816838576">
+    <state width="1899" height="234" key="GridCell.Tab.0.bottom" timestamp="1589830992612">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1882" height="234" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589816838576" />
-    <state width="1882" height="234" key="GridCell.Tab.0.center" timestamp="1589816838576">
+    <state width="1899" height="234" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589830992612" />
+    <state width="1899" height="234" key="GridCell.Tab.0.center" timestamp="1589830992611">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1882" height="234" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589816838576" />
-    <state width="1882" height="234" key="GridCell.Tab.0.left" timestamp="1589816838576">
+    <state width="1899" height="234" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589830992611" />
+    <state width="1899" height="234" key="GridCell.Tab.0.left" timestamp="1589830992611">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1882" height="234" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589816838576" />
-    <state width="1882" height="234" key="GridCell.Tab.0.right" timestamp="1589816838576">
+    <state width="1899" height="234" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589830992611" />
+    <state width="1899" height="234" key="GridCell.Tab.0.right" timestamp="1589830992611">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1882" height="234" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589816838576" />
+    <state width="1899" height="234" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589830992611" />
     <state x="440" y="95" key="SettingsEditor" timestamp="1589739817868">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589739817868" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1589808861673">
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1589824139792">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589808861673" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589824139792" />
   </component>
 </project>

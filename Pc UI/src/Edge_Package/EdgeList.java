@@ -60,7 +60,7 @@ public class EdgeList implements EdgeListInterface
      */
     public NodeList extractNodeList()
     {
-        if( finalRoute != null )
+        if( finalRoute != null && finalRoute.size() > 0 )
         {
             NodeList temp = new NodeList();
 

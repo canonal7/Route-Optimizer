@@ -10,6 +10,10 @@ import java.io.FileWriter;
 
 public class EnterCoordinatesFrame extends JFrame
 {
+    // constants
+    final String unorderedNodesPath = "src/Txt_Files/Unordered_Nodes.txt";
+    final String backgroundPath = "src\\Images\\currentback.png";
+
     // properties
     ActionListener actionListener;
     JFrame thisFrame, parent;
@@ -61,7 +65,7 @@ public class EnterCoordinatesFrame extends JFrame
         // -------end of creating components------
 
         // creating the background
-        ImageIcon icon = new ImageIcon("src\\Images\\currentback.png");
+        ImageIcon icon = new ImageIcon( backgroundPath );
         background = new JLabel( "" );
         background.setIcon( icon );
         background.setBounds(0,0,500,625);
@@ -82,11 +86,14 @@ public class EnterCoordinatesFrame extends JFrame
 
     }
 
+    /**
+     * creates the unorderedFiles.txt file if it doesn't exist
+     */
     public void createFile()
     {
         try
         {
-            unorderedNodes = new File( "src\\Txt_Files\\Unordered_Nodes.txt" );
+            unorderedNodes = new File( unorderedNodesPath );
             if( !unorderedNodes.exists())
                 unorderedNodes.createNewFile();
         } catch ( java.io.IOException e)

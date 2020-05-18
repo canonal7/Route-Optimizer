@@ -1,7 +1,6 @@
 package GUI_Package;
 
 import MapDraw.CreateHTML;
-import com.sun.tools.javac.Main;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +12,11 @@ import java.io.IOException;
 
 public class MainFrame extends JFrame
 {
+    // constants
+    final String unorderedNodesPath = "src/Txt_Files/Unordered_Nodes.txt";
+    final String backgroundPath = "src\\Images\\currentback.png";
+    final String mapHTMLPath = "src/Map_Files/HTML/simple_map.html";
+
     // properties
     JFrame thisFrame;
     JPanel mainPanel;
@@ -27,6 +31,11 @@ public class MainFrame extends JFrame
         super( "Route Optimizer" );
 
         thisFrame = this;
+
+        // clears the map and resets the file
+        CreateHTML createHTML = new CreateHTML();
+        createHTML.returnToOgHTML( mapHTMLPath );
+        resetFile();
 
         setBounds( 750, 200, 500, 625 );
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,7 +66,7 @@ public class MainFrame extends JFrame
         // -------end of creating components------
 
         // creating the background
-        ImageIcon icon = new ImageIcon("src\\Images\\currentback.png");
+        ImageIcon icon = new ImageIcon(backgroundPath);
         background = new JLabel( "" );
         background.setIcon( icon );
         background.setBounds(0,0,500,625);
@@ -77,9 +86,12 @@ public class MainFrame extends JFrame
         setVisible( true );
     }
 
+    /**
+     * deletes and creates a new file to reset its contents
+     */
     public void resetFile()
     {
-        File unorderedNodes = new File( "src/Txt_Files/Unordered_Nodes.txt" );
+        unorderedNodes = new File( unorderedNodesPath );
         unorderedNodes.delete();
         try {
             unorderedNodes.createNewFile();
@@ -97,10 +109,6 @@ public class MainFrame extends JFrame
         {
             if( actionEvent.getSource() == quit )
             {
-                // clears the map and resets the file
-                CreateHTML createHTML = new CreateHTML();
-                createHTML.returnToOgHTML( "src/Map_Files/HTML/simple_map.html" );
-                resetFile();
                 // creates an event that happens when the user clicks the close button on the top right
                 dispatchEvent(new WindowEvent(thisFrame, WindowEvent.WINDOW_CLOSING));
             }
@@ -108,6 +116,7 @@ public class MainFrame extends JFrame
             {
                 new EnterLocationsFrame( thisFrame );
                 setVisible( false );
+                dispose();
             }
             else if( actionEvent.getSource() == settings )
             {
