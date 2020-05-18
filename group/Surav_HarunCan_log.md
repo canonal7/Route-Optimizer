@@ -1,6 +1,6 @@
 # CS102 ~ Personal Log page ~
 ****
-## my full name 
+## Harun Can Surav
 ****
 
 On this page I will keep a weekly record of what I have done for the CS102 group project. This page will be submitted together with the rest of the repository, in partial fulfillment of the CS102 course requirements.
@@ -22,7 +22,7 @@ I've tested whether X, Y Coordinate boxes work by printing the locations to term
 I helped Övgüm and Oğuz on algorithm, which they completely write from scratch after.
 
 // 05.03.2020
-All the group members (except Saad) demonstrated what they were doing.
+All the group members (except Saad because he was sleeping) demonstrated what they were doing.
 
 ### ~ 05.04.2020 - 05.10.2020 ~
 
@@ -72,5 +72,10 @@ Changed the general theme to a less flashy blue-ish theme, you will be missed di
 Custom map that fits better with the general theme of the map.
 Custom markers that looks better on the new map design.
 Cleared up the code and created various methods so the source can look neat and tidier than before.
+Added a short tutorial section for the user to grasp the idea of how to user the app.
+Modified the "extends XClass" type to AppCompatActivity in the classes which has a map so the back button on the top of the activity is visible and functional.
 
+// 05.17.2020
+Updated the color of the text of Select button in SelectFromMapActivity from black to white so that the particular screen looks prettier.
+Deleted the Settings button in the main menu since there will not be any use for Settings in this version of app but the code is still remains in the app for future development.
 ****

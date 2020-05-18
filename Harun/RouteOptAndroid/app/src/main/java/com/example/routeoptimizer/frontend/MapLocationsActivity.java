@@ -29,7 +29,6 @@ public class MapLocationsActivity extends AppCompatActivity {
 
     /**
      * Save buttons onClick method to save the location data into userMapData.txt when the user taps on it
-     * @param view
      */
     public void saveButtonAction(View view) {
         // Getting the String
@@ -87,8 +86,6 @@ public class MapLocationsActivity extends AppCompatActivity {
             city.setText(locInfo[0]);
             country.setText(locInfo[1]);
             continent.setText(locInfo[2]);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

@@ -31,7 +31,6 @@ public class EnterCoordinatesActivity extends AppCompatActivity {
         // Getting the data from EditTexts
         double xCor;
         double yCor;
-        int index = 0;
         String coordinates;
         String coordinatesSoFar = "";
         FileOutputStream fos = null;
