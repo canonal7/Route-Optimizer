@@ -78,4 +78,5 @@ Modified the "extends XClass" type to AppCompatActivity in the classes which has
 // 05.17.2020
 Updated the color of the text of Select button in SelectFromMapActivity from black to white so that the particular screen looks prettier.
 Deleted the Settings button in the main menu since there will not be any use for Settings in this version of app but the code is still remains in the app for future development.
+Cleared up the code to satisfy courses code writing conventions.
 ****

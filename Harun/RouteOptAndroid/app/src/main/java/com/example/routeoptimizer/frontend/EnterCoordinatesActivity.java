@@ -50,9 +50,6 @@ public class EnterCoordinatesActivity extends AppCompatActivity {
             coordinates = xCor + " " + yCor;
             xCorText.setText("");
             yCorText.setText("");
-            // Checking if it works
-            System.out.println(xCor);
-            System.out.println(yCor);
             // Reading the prior data
             coordinatesSoFar = getContent(FILE_NAME);
             // Adding the recent data
