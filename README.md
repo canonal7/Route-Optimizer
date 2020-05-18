@@ -20,7 +20,7 @@ It optimizes a route along the given locations. There are both mobile and Java S
 [Group Meetings Log](group/meetingslog.md)
 #### Group Members
 - [Can Onal](group/Onal_Can_log.md)    _(full name & link to personal log file)_
-- [member2](group/member2_log.md)
+- [Muhamamd Saad Ameer](group/member2_log.md)
 - [Harun Can Surav](group/Surav_HarunCan_log.md)
 - [Oğuz Ata Çal](group/Cal_Oguz_Ata_log.md)
 - [Cenk Duran](group/Duran_Cenk_log.md)
