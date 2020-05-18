@@ -20,6 +20,11 @@ import EdgePack.EdgeList;
 import NodePack.Node;
 import NodePack.NodeList;
 
+/**
+ * @Author Harun Can Surav
+ * This class contains the interfaces required to enter locations, edit locations; also it has
+ * contains the algorithm which is used for optimizing a route.
+ */
 public class EnterLocationsActivity extends AppCompatActivity {
 
     NodeList rawNodes = new NodeList();

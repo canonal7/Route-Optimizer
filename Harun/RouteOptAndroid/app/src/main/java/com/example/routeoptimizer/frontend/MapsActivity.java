@@ -33,6 +33,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+/**
+ * @Author Harun Can Surav
+ * This class is used for displaying the locations and showing the route to user.
+ */
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener {
     private static final String TAG = MapsActivity.class.getSimpleName();
     FileInputStream fis = null;

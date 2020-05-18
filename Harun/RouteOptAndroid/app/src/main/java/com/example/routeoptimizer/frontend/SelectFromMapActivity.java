@@ -27,6 +27,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * @Author Harun Can Surav
+ * This class is used to select locations from the world map
+ */
 public class SelectFromMapActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;

@@ -17,6 +17,12 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/**
+ * @Author Harun Can Surav
+ * This class works as a starting screen for the app and contains the pathway to Tutorial, Enter Locations,
+ * Quit and Settings (deleted); also creates text files used for storing the data if such files does
+ * not exist.
+ */
 public class MainActivity extends AppCompatActivity {
 
 
@@ -79,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Called when the user taps the Tutorial button
-     * @param view
      */
     public void tutorialStart(View view) {
         Intent intent = new Intent(this, TutorialActivity.class);

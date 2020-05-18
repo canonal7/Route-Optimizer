@@ -17,6 +17,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
+/**
+ * @Author Harun Can Surav
+ * This class allows user to enter coordinates into TextFields and then stores them in a text file
+ */
 public class EnterCoordinatesActivity extends AppCompatActivity {
 
     final static String FILE_NAME = "coordinatesList.txt";
@@ -32,7 +36,7 @@ public class EnterCoordinatesActivity extends AppCompatActivity {
         double xCor;
         double yCor;
         String coordinates;
-        String coordinatesSoFar = "";
+        String coordinatesSoFar;
         FileOutputStream fos = null;
 
         EditText xCorText = findViewById(R.id.latitude);

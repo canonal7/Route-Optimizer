@@ -8,6 +8,11 @@ import android.view.View;
 
 import com.example.routeoptimizer.R;
 
+/**
+ * @Author Harun Can Surav
+ * This class is used by user to access properties of the app such as changing between map view and
+ * satellite view.
+ */
 public class SettingsActivity extends AppCompatActivity {
 
     @Override

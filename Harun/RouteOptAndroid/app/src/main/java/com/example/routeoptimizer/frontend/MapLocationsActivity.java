@@ -16,7 +16,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
+/**
+ * @Author Harun Can Surav
+ * This class is used for storing users current data but is not used due to technical difficulties
+ * in implementing Google Geocoding API with the rest of Settings
+ */
 public class MapLocationsActivity extends AppCompatActivity {
 
     private static final String FILE_NAME = "userMapData.txt";

@@ -32,6 +32,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @Author Harun Can Surav
+ * This class is the foundation of the Edit Screen and contains its methods and properties.
+ */
 public class EditLocationsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private final static String FILE_NAME = "coordinatesList.txt";
@@ -116,7 +120,6 @@ public class EditLocationsActivity extends AppCompatActivity implements OnMapRea
 
     /**
      * Is called when the user taps on Remove button
-     * @param view
      */
     public void removeButton(View view) {
         // Checking if the point selected is valid
