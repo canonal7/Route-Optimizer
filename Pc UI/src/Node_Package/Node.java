@@ -1,15 +1,17 @@
 package Node_Package;
-import java.awt.*;
 
-
+/**
+ * A class that is used for the algorithm, has an x,y ( basically a locations class )
+ * @author oğuz, övgüm
+ */
 public class Node implements NodeInterface
 {
     // properties
 
     // properties for the algorithm
-    double x;
-    double y;
-    boolean visited;
+    private double x;
+    private double y;
+    private boolean visited;
 
 
     // constructor

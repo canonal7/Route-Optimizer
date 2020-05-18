@@ -7,10 +7,6 @@ import MapDraw.CreateHTML;
 import com.kingaspx.util.BrowserUtil;
 import com.kingaspx.version.Version;
 import com.teamdev.jxbrowser.chromium.Browser;
-import com.teamdev.jxbrowser.chromium.dom.By;
-import com.teamdev.jxbrowser.chromium.dom.DOMDocument;
-import com.teamdev.jxbrowser.chromium.dom.DOMElement;
-import com.teamdev.jxbrowser.chromium.dom.DOMInputElement;
 import com.teamdev.jxbrowser.chromium.events.ConsoleEvent;
 import com.teamdev.jxbrowser.chromium.events.FinishLoadingEvent;
 import com.teamdev.jxbrowser.chromium.events.LoadAdapter;
@@ -18,26 +14,21 @@ import com.teamdev.jxbrowser.chromium.events.TitleEvent;
 import com.teamdev.jxbrowser.chromium.swing.BrowserView;
 import java.awt.BorderLayout;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.io.File;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import javax.swing.*;
 
 
 /**
- *
- * @author canonal
+ * The frame that has the map that can and cenk created
+ * @author canonal, cenk
  */
 public class MapFrame  extends javax.swing.JFrame  {
 
-    public MapFrame( JFrame parent ) {
-        this.parent = parent;
+    public MapFrame( JFrame parentFrame ) {
+        this.parentFrame = parentFrame;
         initComponents();
         open_site();
     }
@@ -49,9 +40,9 @@ public class MapFrame  extends javax.swing.JFrame  {
         jPanel1 = new javax.swing.JPanel();
         map_panel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        reloadButton = new javax.swing.JButton();
+        titleLabel = new javax.swing.JLabel();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
@@ -63,35 +54,35 @@ public class MapFrame  extends javax.swing.JFrame  {
 
         jPanel2.setBackground(new java.awt.Color(33, 145, 236));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(51, 0, 51));
-        jButton1.setText("Reload");
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setFocusPainted(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        reloadButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        reloadButton.setForeground(new java.awt.Color(51, 0, 51));
+        reloadButton.setText("Reload");
+        reloadButton.setContentAreaFilled(false);
+        reloadButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        reloadButton.setFocusPainted(false);
+        reloadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                reloadButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(32, 123, 198));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Route Optimizer Map");
-        jLabel1.setOpaque(true);
+        titleLabel.setBackground(new java.awt.Color(32, 123, 198));
+        titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        titleLabel.setForeground(new java.awt.Color(255, 255, 255));
+        titleLabel.setText("Route Optimizer Map");
+        titleLabel.setOpaque(true);
 
-        jButton2.setBackground(new java.awt.Color(220, 86, 86));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(51, 0, 51));
-        jButton2.setText("Back");
-        jButton2.setContentAreaFilled(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.setFocusPainted(false);
-        jButton2.setOpaque(true);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setBackground(new java.awt.Color(220, 86, 86));
+        backButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        backButton.setForeground(new java.awt.Color(51, 0, 51));
+        backButton.setText("Back");
+        backButton.setContentAreaFilled(false);
+        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backButton.setFocusPainted(false);
+        backButton.setOpaque(true);
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
 
@@ -100,18 +91,18 @@ public class MapFrame  extends javax.swing.JFrame  {
         jPanel2Layout.setHorizontalGroup(
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(reloadButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 471, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(reloadButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -147,26 +138,31 @@ public class MapFrame  extends javax.swing.JFrame  {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void reloadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         browser.reload();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        parent.setVisible( true );
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        parentFrame.setVisible( true );
         this.setVisible( false );
         CreateHTML createHTML = new CreateHTML();
-        createHTML.returnToOgHTML( "src/Map_Files/HTML/simple_map.html" );
+        createHTML.returnToOgHTML( mapHTMLPath );
     }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton reloadButton;
+    private javax.swing.JButton backButton;
+    private javax.swing.JLabel titleLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel map_panel;
-    private JFrame parent;
+    private JFrame parentFrame;
     // End of variables declaration//GEN-END:variables
+
+    // constants
+    final String unorderedNodesPath = "src/Txt_Files/Unordered_Nodes.txt";
+    final String mapHTMLPath = "src/Map_Files/HTML/simple_map.html";
+
 
     Browser browser;
     BrowserView view;
@@ -182,7 +178,7 @@ public class MapFrame  extends javax.swing.JFrame  {
         map_panel.add(view, BorderLayout.CENTER);
 
         browser.addTitleListener((TitleEvent evt) -> {
-            jLabel1.setText("   " + evt.getTitle());
+            titleLabel.setText("   " + evt.getTitle());
         });
 
         browser.addConsoleListener((ConsoleEvent evt) -> {
@@ -202,7 +198,7 @@ public class MapFrame  extends javax.swing.JFrame  {
             }
         });
 
-        File simple_MapHTML = new File( "src/Map_Files/HTML/simple_map.html" );
+        File simple_MapHTML = new File( mapHTMLPath );
         browser.loadURL( simple_MapHTML.getAbsolutePath() );
     }
 
@@ -210,11 +206,10 @@ public class MapFrame  extends javax.swing.JFrame  {
     {
         try
         {
-            String fileName = "src/Txt_Files/Unordered_Nodes.txt";
-            FileWriter pw = new FileWriter(fileName, true);
+            FileWriter pw = new FileWriter(unorderedNodesPath, true);
             pw.write(s);
             pw.close();
-            System.out.println(" Done");
+            System.out.println("Printed to file");
         }
         catch(FileNotFoundException e)
         {

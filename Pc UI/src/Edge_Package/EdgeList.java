@@ -1,8 +1,13 @@
+
 package Edge_Package;
 
 import java.util.ArrayList;
 import Node_Package.*;
 
+/**
+ * A class to help the algorithm that is designed for the nearest neighbor algorithm and holds edges in an arraylist
+ * @author övgüm, oğuz
+ */
 public class EdgeList implements EdgeListInterface
 {
     // properties
@@ -10,11 +15,11 @@ public class EdgeList implements EdgeListInterface
     // list of edges will be used to store routes depending on their start point
     // listOfEdges.get(0) will have all the edges that start from the first point in the nodeList in constructor
     // listOfEdges.get(1) will have all the edges that start from the second point in the nodeList
-    ArrayList<ArrayList<Edge>> listOfEdges;
-    NodeList nodes;
+    private ArrayList<ArrayList<Edge>> listOfEdges;
+    private NodeList nodes;
 
     // this is the final ordered route, and is only initialized when the final, ordered route is calculated
-    ArrayList<Edge> finalRoute;
+    private ArrayList<Edge> finalRoute;
 
     // constructors
     // the constructor takes the nodeList that contains all the nodes
@@ -60,14 +65,14 @@ public class EdgeList implements EdgeListInterface
      */
     public NodeList extractNodeList()
     {
-        if( finalRoute != null )
+        if( finalRoute != null && finalRoute.size() > 0 )
         {
             NodeList temp = new NodeList();
 
             // adds every edge's startNode to a node list and adds the last points endNode to the list to get all the nodes
             for (int n = 0; n < finalRoute.size() ; n++)
                 temp.add( new Node( finalRoute.get(n).getStartNode().getX(), finalRoute.get(n).getStartNode().getY()));
-            temp.add( new Node( finalRoute.get(finalRoute.size()-1).endNode.getX(), finalRoute.get(finalRoute.size()-1).endNode.getY()) );
+            temp.add( new Node( finalRoute.get(finalRoute.size()-1).getEndNode().getX(), finalRoute.get(finalRoute.size()-1).getEndNode().getY()) );
             return temp;
         }
         else {
@@ -99,7 +104,7 @@ public class EdgeList implements EdgeListInterface
                 {
                     temp = listOfEdges.get(startNode).get(i);
                     indexOfSmallestDistance = i;
-                    temp.startNode.setVisited( true );
+                    temp.getStartNode().setVisited( true );
                     break;
                 }
             }
@@ -108,11 +113,11 @@ public class EdgeList implements EdgeListInterface
             {
                 if( temp == null)
                     System.out.println( "Temp is null, something went wrong");
-                else if (listOfEdges.get(startNode).get(n).getDistance() <= temp.getDistance() && !listOfEdges.get(startNode).get(n).endNode.isVisited() )
+                else if (listOfEdges.get(startNode).get(n).getDistance() <= temp.getDistance() && !listOfEdges.get(startNode).get(n).getEndNode().isVisited() )
                 {
                     temp = listOfEdges.get(startNode).get(n);
                     indexOfSmallestDistance = n ;
-                    temp.startNode.setVisited( true );
+                    temp.getStartNode().setVisited( true );
                 }
             }
             finalRoute.add(temp);

@@ -1,11 +1,14 @@
 package MapDraw;
 
 import Node_Package.NodeList;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * A class that modifies the HTLM document that is run in the main
+ * @author övgüm
+ */
 public class CreateHTML {
     //properties.
 
@@ -59,7 +62,7 @@ public class CreateHTML {
                 "    strokeOpacity: 1.0,\n" +
                 "    strokeWeight: 2\n" +
                 "  });\n" +
-                this.markerAdd(ndList)
+                markerAdd(ndList)
                 +
                 "\n" +
                 "  flightPath.setMap(map);\n";
@@ -96,7 +99,7 @@ public class CreateHTML {
                 "       * element that contains the map. */\n" +
                 "      #map {\n" +
                 "        height: 100%;\n" +
-                "        width: 74%;\n" +
+                "        width: 100%;\n" +
                 "      }\n" +
                 "      /* Optional: Makes the sample page fill the window. */\n" +
                 "      html, body {\n" +
@@ -117,16 +120,6 @@ public class CreateHTML {
                 "        line-height: 30px;\n" +
                 "        padding-left: 10px;\n" +
                 "      }\n" +
-                "      #label {\n" +
-                "        font-size: 15px;\n" +
-                "        position: absolute;\n" +
-                "        top: 15px; \n" +
-                "        right: 125px;\n" +
-                "      \tfloat: right;\n" +
-                "      \twidth: 10em;\n" +
-                "      \ttext-align: left;\n" +
-                "        vertical-align: top;\n" +
-                "      }\n" +
                 "\n" +
                 "    </style>\n" +
                 "  </head>\n" +
@@ -135,14 +128,10 @@ public class CreateHTML {
                 "      <input onclick=\"clearMarkers();\" type=button value=\"Hide Markers\">\n" +
                 "      <input onclick=\"showMarkers();\" type=button value=\"Show All Markers\">\n" +
                 "      <input onclick=\"deleteMarkers();\" type=button value=\"Delete Markers\">\n" +
-                "      <input onclick=\"readFromFile();\" type=button value=\"read\">\n" +
                 "\n" +
                 "     \n" +
                 "    </div>\n" +
                 "    <div id=\"map\"></div>\n" +
-                "    <label id = \"label\">\n" +
-                "    <p>Points</p>\t\n" +
-                "    </label>\n" +
                 "    <p>Click on the map to add markers.</p>\n" +
                 "    <script>\n" +
                 "\n" +
@@ -192,9 +181,7 @@ public class CreateHTML {
                 "        markers.push(marker);\n" +
                 "        \n" +
                 "        string = (marker.getPosition().lat() + \" \" + marker.getPosition().lng() + \"\\n\");\n" +
-                "        //document.getElementById('Points').innerHTML = string;\n" +
                 "        console.log(string);\n" +
-                "        document.getElementById(\"label\").innerHTML = string;\n" +
                 "       \n" +
                 "        labelIndex++;\n" +
                 "      }\n" +
@@ -219,22 +206,14 @@ public class CreateHTML {
                 "      // Deletes all markers in the array by removing references to them.\n" +
                 "      function deleteMarkers() {\n" +
                 "        clearMarkers();\n" +
-                "        document.getElementById(\"label\").innerHTML = \"\";\n" +
                 "        string = \"\";\n" +
                 "        labelIndex = 1;\n" +
                 "        markers = [];\n" +
                 "      }\n" +
                 "\n" +
-                "      function readFromFile() {\n" +
-                "        jQuery.get('/Users/canonal/Desktop/CS102 Group Project/CS102-Group-1F-Project/Route Opt Google Maps in Java Swing/HTML/result.txt', function(data) {\n" +
-                "          var locArr = data.split(\",\");\n" +
-                "          console.log(locArr);\n" +
-                "          //optional stuff to do after success\n" +
-                "        });\n" +
                 "\n" +
                 "\n" +
                 "        \n" +
-                "      }\n" +
                 "\n" +
                 "\n" +
                 "      \n" +
@@ -276,7 +255,7 @@ public class CreateHTML {
                 "       * element that contains the map. */\n" +
                 "      #map {\n" +
                 "        height: 100%;\n" +
-                "        width: 74%;\n" +
+                "        width: 100%;\n" +
                 "      }\n" +
                 "      /* Optional: Makes the sample page fill the window. */\n" +
                 "      html, body {\n" +
@@ -297,16 +276,6 @@ public class CreateHTML {
                 "        line-height: 30px;\n" +
                 "        padding-left: 10px;\n" +
                 "      }\n" +
-                "      #label {\n" +
-                "        font-size: 15px;\n" +
-                "        position: absolute;\n" +
-                "        top: 15px; \n" +
-                "        right: 125px;\n" +
-                "      \tfloat: right;\n" +
-                "      \twidth: 10em;\n" +
-                "      \ttext-align: left;\n" +
-                "        vertical-align: top;\n" +
-                "      }\n" +
                 "\n" +
                 "    </style>\n" +
                 "  </head>\n" +
@@ -315,14 +284,10 @@ public class CreateHTML {
                 "      <input onclick=\"clearMarkers();\" type=button value=\"Hide Markers\">\n" +
                 "      <input onclick=\"showMarkers();\" type=button value=\"Show All Markers\">\n" +
                 "      <input onclick=\"deleteMarkers();\" type=button value=\"Delete Markers\">\n" +
-                "      <input onclick=\"readFromFile();\" type=button value=\"read\">\n" +
                 "\n" +
                 "     \n" +
                 "    </div>\n" +
                 "    <div id=\"map\"></div>\n" +
-                "    <label id = \"label\">\n" +
-                "    <p>Points</p>\t\n" +
-                "    </label>\n" +
                 "    <p>Click on the map to add markers.</p>\n" +
                 "    <script>\n" +
                 "\n" +
@@ -368,9 +333,7 @@ public class CreateHTML {
                 "        markers.push(marker);\n" +
                 "        \n" +
                 "        string = (marker.getPosition().lat() + \" \" + marker.getPosition().lng() + \"\\n\");\n" +
-                "        //document.getElementById('Points').innerHTML = string;\n" +
                 "        console.log(string);\n" +
-                "        document.getElementById(\"label\").innerHTML = string;\n" +
                 "       \n" +
                 "        labelIndex++;\n" +
                 "      }\n" +
@@ -395,22 +358,14 @@ public class CreateHTML {
                 "      // Deletes all markers in the array by removing references to them.\n" +
                 "      function deleteMarkers() {\n" +
                 "        clearMarkers();\n" +
-                "        document.getElementById(\"label\").innerHTML = \"\";\n" +
                 "        string = \"\";\n" +
                 "        labelIndex = 1;\n" +
                 "        markers = [];\n" +
                 "      }\n" +
                 "\n" +
-                "      function readFromFile() {\n" +
-                "        jQuery.get('/Users/canonal/Desktop/CS102 Group Project/CS102-Group-1F-Project/Route Opt Google Maps in Java Swing/HTML/result.txt', function(data) {\n" +
-                "          var locArr = data.split(\",\");\n" +
-                "          console.log(locArr);\n" +
-                "          //optional stuff to do after success\n" +
-                "        });\n" +
                 "\n" +
                 "\n" +
                 "        \n" +
-                "      }\n" +
                 "\n" +
                 "\n" +
                 "      \n" +

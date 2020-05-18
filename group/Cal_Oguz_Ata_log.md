@@ -78,5 +78,5 @@ On this page I will keep a weekly record of what I have done for the CS102 group
 
 18.05.2020
 	-Had a meeting with övgüm and can. We continued integrating the map on the pc ui and fixed some of the issues.
-
+****
 
