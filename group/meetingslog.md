@@ -24,5 +24,10 @@ We reviewed the progress and saw that everyone have come to a point but decided 
 **Present:** Everyone   _**Absent:**_ No one
 
 Harun showed his work via screen sharing, Saad showed his GUI, Cenk and Can showed what they have done in the map-work, Oguz and Ovgum also shared their algorithm and discussed the flow of information required input-outputs. Also agreed that Oguz and Ovgum should start to help others' assignments since they have finished majority of their work. Planned to speed-up work.
+
 ****
+### Meeting ~ (18.05.2020, 90 minutes)
 ****
+**Present:** Övgüm, Oğuz, Cenk, Harun   _**Absent:**_ Can (was not home), Saad (reason unknown)
+
+Cenk shared their map file that they made with can and we started implementing it to the pc ui. We had some issues about libraries and paths but we managed most of them. But we couldnt implement it all and planned to continue it tomorrow.
