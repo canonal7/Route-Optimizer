@@ -6,7 +6,7 @@
 On this page I will keep a weekly record of what I have done for the CS102 group project. 
 This page will be submitted together with the rest of the repository, in partial fulfillment of the CS102 course requirements.
 
-24.04.2020 - 01.05.2020
+### ~ 24.04.2020 - 01.05.2020 ~
 	-Decided who does which part of the project. Oğuz & I are doing the 
 	part calculating the route. Harun is doing the Android GUI, Saad is doing
 	the GUI for computers. Cenk & Can are doing the map.
@@ -35,7 +35,7 @@ This page will be submitted together with the rest of the repository, in partial
 	better. We decided that we should definitely implement 2-opt and even
 	maybe something else (maybe Christofides) to generate the initial tour.
 
-02.05.2020 - 08.05.2020
+### ~ 02.05.2020 - 08.05.2020 ~
 	-Everyone showed their work in a meeting. We are all in the same English
 	class and had work due in a short time so we postponed the integration.
 	
@@ -60,7 +60,7 @@ This page will be submitted together with the rest of the repository, in partial
 	to the first one and it returned that. After we fixed that it was working
 	and made the route usable as it was meaningful now.
 
-09.05.2020 - 16.05-2020
+### ~ 09.05.2020 - 16.05-2020 ~
 
 	-We didn't do anything for 2-3 days.
 
@@ -74,7 +74,7 @@ This page will be submitted together with the rest of the repository, in partial
 	was going and who were going to help which part of it. (Map and GUI). 
 	Oğuz was going to help the GUI and I was going to help the map.
 	
-17.05.2020 - 24.05.2020
+### ~ 17.05.2020 - 24.05.2020 ~
 	
 	-Talked with Can & Cenk, who were previously working with the map to 
 	decide how the relationship of the map will be done with the algorithm.
@@ -112,19 +112,3 @@ This page will be submitted together with the rest of the repository, in partial
 	-Oğuz, Can and I met and continued the integration. Solved some parts of
 	the problem. UML of the algorithm was wrong so we did it from the start.
 	 
-	
-
-
-
-  
-
-
-
-
-
-
-
-
-
-	 
-	
