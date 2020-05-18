@@ -25,7 +25,7 @@
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="32dp"
         android:background="@color/colorButton"
         android:onClick="mapLocations"
         android:text="@string/map_location_button"
@@ -53,13 +53,15 @@
         android:id="@+id/checkBox"
         android:layout_width="240dp"
         android:layout_height="50dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="32dp"
         android:background="@color/colorButton"
         android:fontFamily="sans-serif-medium"
         android:text="@string/download_the_map_button"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toTopOf="@+id/checkBox2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22000003" />
 </androidx.constraintlayout.widget.ConstraintLayout>
