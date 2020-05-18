@@ -169,11 +169,11 @@ public class CreateHTML {
                 "          label: labelIndex.toString(),\n" +
                 "          \n" +
                 "          map: map,\n" +
-                "          draggable: true\n" +
+                "          draggable: false\n" +
                 "        });\n" +
                 "        markers.push(marker);\n" +
                 "        \n" +
-                "        string += (marker.getPosition().lat() + \" \" + marker.getPosition().lng() + \"\\n\");\n" +
+                "        string = (marker.getPosition().lat() + \" \" + marker.getPosition().lng() + \"\\n\");\n" +
                 "        //document.getElementById('Points').innerHTML = string;\n" +
                 "        console.log(string);\n" +
                 "        document.getElementById(\"label\").innerHTML = string;\n" +
@@ -345,11 +345,11 @@ public class CreateHTML {
                 "          label: labelIndex.toString(),\n" +
                 "          \n" +
                 "          map: map,\n" +
-                "          draggable: true\n" +
+                "          draggable: false\n" +
                 "        });\n" +
                 "        markers.push(marker);\n" +
                 "        \n" +
-                "        string += (marker.getPosition().lat() + \" \" + marker.getPosition().lng() + \"\\n\");\n" +
+                "        string = (marker.getPosition().lat() + \" \" + marker.getPosition().lng() + \"\\n\");\n" +
                 "        //document.getElementById('Points').innerHTML = string;\n" +
                 "        console.log(string);\n" +
                 "        document.getElementById(\"label\").innerHTML = string;\n" +

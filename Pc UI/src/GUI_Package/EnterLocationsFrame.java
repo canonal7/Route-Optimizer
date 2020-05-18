@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 public class EnterLocationsFrame extends JFrame
 {
     // properties
-    JFrame thisFrame, parent;
+    JFrame thisFrame, parent, mapFrame;
     JPanel mainPanel;
     JLabel title, background;
     JButton selectFromMap, enterCoordinates, enterLink, done, edit, back;
@@ -101,6 +101,8 @@ public class EnterLocationsFrame extends JFrame
             if( actionEvent.getSource() == selectFromMap )
             {
                 createMap( thisFrame );
+                setVisible( false );
+                dispose();
 
             }
             else if( actionEvent.getSource() == enterCoordinates )
@@ -120,6 +122,9 @@ public class EnterLocationsFrame extends JFrame
                 edges.calculateTwoOpt();
                 System.out.println( "nodes are " + edges.extractNodeList() );
                 createHTML.overwriteFile( "src/Map_Files/HTML/simple_map.html", edges.extractNodeList());
+                createMap( thisFrame );
+                setVisible( false );
+                dispose();
 
             }
             else if( actionEvent.getSource() == edit )
@@ -159,7 +164,8 @@ public class EnterLocationsFrame extends JFrame
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MapFrame( parent ).setVisible(true);
+                mapFrame = new MapFrame( parent );
+                mapFrame.setVisible( true );
                 setVisible( false );
                 dispose();
             }

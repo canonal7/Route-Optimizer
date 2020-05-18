@@ -118,14 +118,6 @@ public class EnterCoordinatesFrame extends JFrame
         }
     }
 
-    /**
-     *  deletes the unordered nodes file and creates a new one
-     */
-    public void resetFile()
-    {
-        unorderedNodes.delete();
-        createFile();
-    }
 
     public class ButtonActionListener implements ActionListener
     {

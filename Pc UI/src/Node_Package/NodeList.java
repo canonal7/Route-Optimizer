@@ -156,7 +156,7 @@ public class NodeList
         String s1;
         NodeList temp = new NodeList();
 
-        File file = new File( "C:\\Users\\halit\\Desktop\\Pc UI\\src\\Txt_Files\\Unordered_Nodes.txt" );
+        File file = new File( "src/Txt_Files/Unordered_Nodes.txt" );
         FileReader fileReader = null;
         try
         {

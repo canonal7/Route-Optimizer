@@ -2,6 +2,8 @@ package GUI_Package;
 
 import java.io.FileWriter;
 import java.io.IOException;
+
+import MapDraw.CreateHTML;
 import com.kingaspx.util.BrowserUtil;
 import com.kingaspx.version.Version;
 import com.teamdev.jxbrowser.chromium.Browser;
@@ -19,6 +21,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.io.File;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -151,39 +154,9 @@ public class MapFrame  extends javax.swing.JFrame  {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         parent.setVisible( true );
         this.setVisible( false );
-        this.dispose();
+        CreateHTML createHTML = new CreateHTML();
+        createHTML.returnToOgHTML( "src/Map_Files/HTML/simple_map.html" );
     }//GEN-LAST:event_jButton2ActionPerformed
-
-   /* *//**
-     * @param args the command line arguments
-     *//*
-    public static void main(String args[]) {
-        *//* Set the Nimbus look and feel *//*
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        *//* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         *//*
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MapFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        //</editor-fold>
-
-        *//* Create and display the form *//*
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MapFrame().setVisible(true);
-            }
-        });
-    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -229,7 +202,8 @@ public class MapFrame  extends javax.swing.JFrame  {
             }
         });
 
-        browser.loadURL("C:\\Users\\halit\\Desktop\\Pc UI\\src\\Map_Files\\HTML\\simple_map.html");
+        File simple_MapHTML = new File( "src/Map_Files/HTML/simple_map.html" );
+        browser.loadURL( simple_MapHTML.getAbsolutePath() );
     }
 
     public void printToFile(String s) throws FileNotFoundException
@@ -237,13 +211,15 @@ public class MapFrame  extends javax.swing.JFrame  {
         try
         {
             String fileName = "src/Txt_Files/Unordered_Nodes.txt";
-            PrintWriter pw = new PrintWriter(fileName);
-            pw.print(s);
+            FileWriter pw = new FileWriter(fileName, true);
+            pw.write(s);
             pw.close();
             System.out.println(" Done");
         }
         catch(FileNotFoundException e)
         {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

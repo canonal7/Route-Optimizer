@@ -1,5 +1,6 @@
 package GUI_Package;
 
+import MapDraw.CreateHTML;
 import com.sun.tools.javac.Main;
 
 import javax.swing.*;
@@ -7,6 +8,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.IOException;
 
 public class MainFrame extends JFrame
 {
@@ -16,6 +19,7 @@ public class MainFrame extends JFrame
     JLabel title, background;
     JButton enterLocations, settings, quit;
     ButtonActionListener actionListener;
+    File unorderedNodes;
 
     // constructor
     public MainFrame()
@@ -73,6 +77,19 @@ public class MainFrame extends JFrame
         setVisible( true );
     }
 
+    public void resetFile()
+    {
+        File unorderedNodes = new File( "src/Txt_Files/Unordered_Nodes.txt" );
+        unorderedNodes.delete();
+        try {
+            unorderedNodes.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println( "There was an error creating the file" );
+        }
+    }
+
+
     public class ButtonActionListener implements ActionListener
     {
         @Override
@@ -80,6 +97,10 @@ public class MainFrame extends JFrame
         {
             if( actionEvent.getSource() == quit )
             {
+                // clears the map and resets the file
+                CreateHTML createHTML = new CreateHTML();
+                createHTML.returnToOgHTML( "src/Map_Files/HTML/simple_map.html" );
+                resetFile();
                 // creates an event that happens when the user clicks the close button on the top right
                 dispatchEvent(new WindowEvent(thisFrame, WindowEvent.WINDOW_CLOSING));
             }
