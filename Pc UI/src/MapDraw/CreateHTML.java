@@ -36,6 +36,8 @@ public class CreateHTML {
     private String createLatLng( NodeList ndList ){
         String holder = "{lat: " + ndList.get( 0 ).getX() + "," + " lng: " + ndList.get( 0 ).getY() + "}";
 
+
+
         for( int i = 0; i < ndList.size(); i++ ){
             holder += "," + "\n" + "{lat: " + ndList.get( i ).getX() + "," + " lng: " + ndList.get( i ).getY() + "}";
         }
@@ -48,7 +50,7 @@ public class CreateHTML {
                 "  });\n" +
                 "\n" +
                 "  var flightPlanCoordinates = [\n" +
-                        holder +
+                holder +
                 "  ];\n" +
                 "  var flightPath = new google.maps.Polyline({\n" +
                 "    path: flightPlanCoordinates,\n" +
@@ -57,10 +59,26 @@ public class CreateHTML {
                 "    strokeOpacity: 1.0,\n" +
                 "    strokeWeight: 2\n" +
                 "  });\n" +
+                this.markerAdd(ndList)
+                +
                 "\n" +
                 "  flightPath.setMap(map);\n";
 
         return initMap;
+    }
+
+    private String markerAdd(NodeList ndList)
+    {
+        String addMarkers = "";
+        for( int i = 0; i < ndList.size() - 1; i++)
+        {
+            addMarkers += "var marker" + i + " = new google.maps.Marker({" + "\n"
+                    + "position: " + "{lat: " + ndList.get( i ).getX() + "," + " lng: " + ndList.get( i ).getY() + "}," + "\n"
+                    + "map: map," + "\n"
+                    + "label: \"" + ((int)(i + 1)) + "\"" + "\n"
+                    +"});" + "\n";
+        }
+        return addMarkers;
     }
 
     /**
