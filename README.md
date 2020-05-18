@@ -24,6 +24,7 @@ It optimizes a route along the given locations. There are both mobile and Java S
 - [Harun Can Surav](group/Surav_HarunCan_log.md)
 - [Oğuz Ata Çal](group/Cal_Oguz_Ata_log.md)
 - [Cenk Duran](group/Duran_Cenk_log.md)
+- [Övgüm Can Sezen](group/Sezen_Ovgum_Can_log.md)
 
 ****
 **Instructor:** _(David Davenport)_   **TA:**  _(Khushbakht Ali Qamar)_
