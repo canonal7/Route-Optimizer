@@ -28,7 +28,6 @@ On this page I will keep a weekly record of what I have done for the CS102 group
 
 04.05.2020
 	-Wrote some comments and made some convenience changes like changing variable names to more meaningful ones
-	-Uploaded it to git-hub 
 
 06.05.2020
 	-Studied css and tried to make the gui more apealing
