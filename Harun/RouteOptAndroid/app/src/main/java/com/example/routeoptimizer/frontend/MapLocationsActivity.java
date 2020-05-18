@@ -39,7 +39,6 @@ public class MapLocationsActivity extends AppCompatActivity {
         String countryText = country.getText().toString();
         String continentText = continent.getText().toString();
         String locData = cityText + ", " + countryText + ", " + continentText;
-        System.out.println(locData);
         // Saving the String
         FileOutputStream fos = null;
 

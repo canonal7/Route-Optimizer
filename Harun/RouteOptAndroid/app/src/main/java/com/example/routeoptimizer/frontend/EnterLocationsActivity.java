@@ -98,11 +98,8 @@ public class EnterLocationsActivity extends AppCompatActivity {
                 if (editedNodes.get(i) != null)
                     optimizedNodesString += editedNodes.get(i).getX() + " " + editedNodes.get(i).getY() + "\n";
             }
-            System.out.println(optimizedNodesString + " Before null deletion");
             if(optimizedNodesString.contains("null"))
                 optimizedNodesString = optimizedNodesString.substring(optimizedNodesString.indexOf("null") + 4);
-            System.out.println(optimizedNodesString + "After null deletion");
-
             // Writing the previously extracted string into a text file
             setOptimizedNodesString(OPTIMIZED_FILE_NAME);
 

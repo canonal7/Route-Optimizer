@@ -89,7 +89,6 @@ public class EditLocationsActivity extends AppCompatActivity implements OnMapRea
                 }
             }
         }
-
         // Connecting the ArrayAdapter with locationList array
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, locationList);
@@ -126,9 +125,12 @@ public class EditLocationsActivity extends AppCompatActivity implements OnMapRea
             Toast.makeText(this, selectedNode + " is removed.", Toast.LENGTH_LONG).show();
             for (int i = 0; i < markerArrayList.size(); i++) {
                 String coordinates = markerArrayList.get(i).getPosition().latitude + " " + markerArrayList.get(i).getPosition().longitude;
-                if( coordinates.equals(selectedNode) )
+                if( coordinates.equals(selectedNode) ) {
                     markerArrayList.get(i).setAlpha(0);
+                    break;
+                }
             }
+            indexOfSelectedLocation = 0;
             spinner.setSelection(0);
         }
         // Prompting the user if the user selects a non-valid object ("Select a location")
@@ -136,11 +138,10 @@ public class EditLocationsActivity extends AppCompatActivity implements OnMapRea
             Toast.makeText(this, "Select a valid location", Toast.LENGTH_LONG).show();
         // Building the string
         StringBuilder coordinatesSoFar = new StringBuilder();
-        for (int i = 1; i < locationList.size() -1 ; i++) {
+        for (int i = 1; i < locationList.size() ; i++) {
             coordinatesSoFar.append(locationList.get(i)).append("\n");
         }
         writeFile(FILE_NAME, coordinatesSoFar.toString());
-
     }
 
 
