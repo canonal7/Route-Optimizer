@@ -5,14 +5,18 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * A class that is used for 2-opt and a collection for nodes
+ * @author oğuz, övgüm
+ */
 public class NodeList
 {
     // constants
     final String unorderedNodesPath = "src/Txt_Files/Unordered_Nodes.txt";
 
     // properties
-    ArrayList<Node> nodes;
-    double distance;
+    private ArrayList<Node> nodes;
+    private double distance;
 
     // constructors
 

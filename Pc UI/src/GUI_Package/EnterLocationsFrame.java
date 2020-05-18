@@ -8,30 +8,33 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The enter locations frame of the app that has its components
+ * @author oğuz, saad
+ */
 public class EnterLocationsFrame extends JFrame
 {
     // constants
-    final String unorderedNodesPath = "src/Txt_Files/Unordered_Nodes.txt";
     final String backgroundPath = "src\\Images\\currentback.png";
     final String mapHTMLPath = "src/Map_Files/HTML/simple_map.html";
 
     // properties
-    JFrame thisFrame, parent, mapFrame;
-    JPanel mainPanel;
-    JLabel title, background;
-    JButton selectFromMap, enterCoordinates, enterLink, done, edit, back;
-    ActionListener actionListener;
-    EdgeList edges;
-    CreateHTML createHTML;
+    private JFrame thisFrame, parentFrame, mapFrame;
+    private JPanel mainPanel;
+    private JLabel titleLabel, backgroundLabel;
+    private JButton selectFromMapButton, enterCoordinatesButton, enterLinkButton, doneButton, editButton, backButton;
+    private ActionListener actionListener;
+    private EdgeList edges;
+    private CreateHTML createHTML;
 
     // constructor
-    public EnterLocationsFrame( JFrame parent)
+    public EnterLocationsFrame( JFrame parentFrame)
     {
         super( "Route Optimizer" );
         createHTML = new CreateHTML();
 
         thisFrame = this;
-        this.parent = parent;
+        this.parentFrame = parentFrame;
 
         actionListener = new ButtonActionListener();
 
@@ -43,51 +46,51 @@ public class EnterLocationsFrame extends JFrame
         mainPanel.setLayout( null );
 
         // -------start of creating components------
-        title = new JLabel( "Enter Locations" );
-        title.setBounds( 40, 20, 300, 40 );
-        title.setForeground( Color.WHITE );
-        title.setFont( title.getFont().deriveFont(30f));
+        titleLabel = new JLabel( "Enter Locations" );
+        titleLabel.setBounds( 40, 20, 300, 40 );
+        titleLabel.setForeground( Color.WHITE );
+        titleLabel.setFont( titleLabel.getFont().deriveFont(30f));
 
-        selectFromMap = new JButton( "Select From Map" );
-        selectFromMap.setBounds( 40, 140, 140, 40);
-        selectFromMap.addActionListener( actionListener );
+        selectFromMapButton = new JButton( "Select From Map" );
+        selectFromMapButton.setBounds( 40, 140, 140, 40);
+        selectFromMapButton.addActionListener( actionListener );
 
-        enterCoordinates = new JButton( "Enter Coordinates" );
-        enterCoordinates.setBounds( 40, 200, 140, 40 );
-        enterCoordinates.addActionListener( actionListener );
+        enterCoordinatesButton = new JButton( "Enter Coordinates" );
+        enterCoordinatesButton.setBounds( 40, 200, 140, 40 );
+        enterCoordinatesButton.addActionListener( actionListener );
 
-        enterLink = new JButton( "Enter Link" );
-        enterLink.setBounds( 40, 260, 140, 40 );
-        enterLink.addActionListener( actionListener );
+        enterLinkButton = new JButton( "Enter Link" );
+        enterLinkButton.setBounds( 40, 260, 140, 40 );
+        enterLinkButton.addActionListener( actionListener );
 
-        back = new JButton( "Back" );
-        back.setBounds( 40, 500, 85, 40);
-        back.addActionListener( actionListener );
+        backButton = new JButton( "Back" );
+        backButton.setBounds( 40, 500, 85, 40);
+        backButton.addActionListener( actionListener );
 
-        edit = new JButton( "Edit" );
-        edit.setBounds( 200, 500, 85, 40);
-        edit.addActionListener( actionListener );
+        editButton = new JButton( "Edit" );
+        editButton.setBounds( 200, 500, 85, 40);
+        editButton.addActionListener( actionListener );
 
-        done = new JButton( "Done" );
-        done.setBounds( 360, 500, 85, 40);
-        done.addActionListener( actionListener );
+        doneButton = new JButton( "Done" );
+        doneButton.setBounds( 360, 500, 85, 40);
+        doneButton.addActionListener( actionListener );
         // -------end of creating components------
 
         // creating the background
         ImageIcon icon = new ImageIcon(backgroundPath);
-        background = new JLabel( "" );
-        background.setIcon( icon );
-        background.setBounds(0,0,500,625);
+        backgroundLabel = new JLabel( "" );
+        backgroundLabel.setIcon( icon );
+        backgroundLabel.setBounds(0,0,500,625);
 
         // adding everything into the main panel
-        mainPanel.add( title );
-        mainPanel.add( selectFromMap );
-        mainPanel.add( enterCoordinates );
-        mainPanel.add( enterLink );
-        mainPanel.add( back );
-        mainPanel.add( edit );
-        mainPanel.add( done );
-        mainPanel.add( background );
+        mainPanel.add( titleLabel );
+        mainPanel.add( selectFromMapButton );
+        mainPanel.add( enterCoordinatesButton );
+        mainPanel.add( enterLinkButton );
+        mainPanel.add( backButton );
+        mainPanel.add( editButton );
+        mainPanel.add( doneButton );
+        mainPanel.add( backgroundLabel );
 
 
         add( mainPanel );
@@ -103,7 +106,7 @@ public class EnterLocationsFrame extends JFrame
         @Override
         public void actionPerformed(ActionEvent actionEvent )
         {
-            if( actionEvent.getSource() == selectFromMap )
+            if( actionEvent.getSource() == selectFromMapButton )
             {
                 createHTML.returnToOgHTML( mapHTMLPath );
                 createMap( thisFrame );
@@ -111,17 +114,17 @@ public class EnterLocationsFrame extends JFrame
                 dispose();
 
             }
-            else if( actionEvent.getSource() == enterCoordinates )
+            else if( actionEvent.getSource() == enterCoordinatesButton )
             {
                 new EnterCoordinatesFrame( thisFrame );
                 setVisible( false );
                 dispose();
             }
-            else if( actionEvent.getSource() == enterLink )
+            else if( actionEvent.getSource() == enterLinkButton )
             {
 
             }
-            else if( actionEvent.getSource() == done )
+            else if( actionEvent.getSource() == doneButton )
             {
                 edges = EdgeList.createFromText();
                 edges.nearestNeighbor();
@@ -133,20 +136,20 @@ public class EnterLocationsFrame extends JFrame
                 dispose();
 
             }
-            else if( actionEvent.getSource() == edit )
+            else if( actionEvent.getSource() == editButton )
             {
 
             }
-            else if( actionEvent.getSource() == back )
+            else if( actionEvent.getSource() == backButton )
             {
-                parent.setVisible( true );
+                parentFrame.setVisible( true );
                 setVisible( false );
                 dispose();
             }
         }
     }
 
-    public void createMap( JFrame parent )
+    public void createMap( JFrame parentFrame )
     {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -170,7 +173,7 @@ public class EnterLocationsFrame extends JFrame
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                mapFrame = new MapFrame( parent );
+                mapFrame = new MapFrame( parentFrame );
                 mapFrame.setVisible( true );
                 setVisible( false );
                 dispose();

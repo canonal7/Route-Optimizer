@@ -7,7 +7,10 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileWriter;
 
-
+/**
+ * The enter coordinates frame of the app that lets the user enter coordinates and saves them to a file
+ * @author oğuz, saad
+ */
 public class EnterCoordinatesFrame extends JFrame
 {
     // constants
@@ -15,22 +18,22 @@ public class EnterCoordinatesFrame extends JFrame
     final String backgroundPath = "src\\Images\\currentback.png";
 
     // properties
-    ActionListener actionListener;
-    JFrame thisFrame, parent;
-    JPanel mainPanel;
-    JTextField latitudeField, longitudeField;
-    JLabel title,background;
-    JButton back, enter;
-    File unorderedNodes;
+    private ActionListener actionListener;
+    private JFrame thisFrame, parentFrame;
+    private JPanel mainPanel;
+    private JTextField latitudeField, longitudeField;
+    private JLabel titleLabel,backgroundLabel;
+    private JButton backButton, enterButton;
+    private File unorderedNodes;
 
 
     // constructor
-    public EnterCoordinatesFrame( JFrame parent )
+    public EnterCoordinatesFrame( JFrame parentFrame )
     {
         super("Route Optimizer");
 
         thisFrame = this;
-        this.parent = parent;
+        this.parentFrame = parentFrame;
 
         actionListener = new ButtonActionListener();
 
@@ -42,10 +45,10 @@ public class EnterCoordinatesFrame extends JFrame
         mainPanel.setLayout( null );
 
         // -------start of creating components------
-        title = new JLabel( "Enter Coordinates" );
-        title.setBounds( 40, 20, 300, 40 );
-        title.setForeground( Color.WHITE );
-        title.setFont( title.getFont().deriveFont(30f));
+        titleLabel = new JLabel( "Enter Coordinates" );
+        titleLabel.setBounds( 40, 20, 300, 40 );
+        titleLabel.setForeground( Color.WHITE );
+        titleLabel.setFont( titleLabel.getFont().deriveFont(30f));
 
         latitudeField = new JTextField( "Latitude" );
         latitudeField.setBounds( 80, 240, 140, 40);
@@ -55,28 +58,28 @@ public class EnterCoordinatesFrame extends JFrame
         longitudeField.setBounds( 260, 240, 140, 40);
         longitudeField.addActionListener( actionListener );
 
-        back = new JButton( "Back" );
-        back.setBounds( 140, 500, 85, 40);
-        back.addActionListener( actionListener );
+        backButton = new JButton( "Back" );
+        backButton.setBounds( 140, 500, 85, 40);
+        backButton.addActionListener( actionListener );
 
-        enter = new JButton( "Enter" );
-        enter.setBounds(  240, 500, 85, 40);
-        enter.addActionListener( actionListener );
+        enterButton = new JButton( "Enter" );
+        enterButton.setBounds(  240, 500, 85, 40);
+        enterButton.addActionListener( actionListener );
         // -------end of creating components------
 
         // creating the background
         ImageIcon icon = new ImageIcon( backgroundPath );
-        background = new JLabel( "" );
-        background.setIcon( icon );
-        background.setBounds(0,0,500,625);
+        backgroundLabel = new JLabel( "" );
+        backgroundLabel.setIcon( icon );
+        backgroundLabel.setBounds(0,0,500,625);
 
         // adding every component into the main component
-        mainPanel.add( title );
+        mainPanel.add( titleLabel );
         mainPanel.add( latitudeField );
         mainPanel.add( longitudeField );
-        mainPanel.add( back );
-        mainPanel.add( enter );
-        mainPanel.add( background );
+        mainPanel.add( backButton );
+        mainPanel.add( enterButton );
+        mainPanel.add( backgroundLabel );
 
         createFile();
 
@@ -131,13 +134,13 @@ public class EnterCoordinatesFrame extends JFrame
         @Override
         public void actionPerformed(ActionEvent actionEvent )
         {
-            if( actionEvent.getSource() == enter )
+            if( actionEvent.getSource() == enterButton )
             {
                 writeFile( latitudeField.getText(), longitudeField.getText());
             }
-            else if( actionEvent.getSource() == back )
+            else if( actionEvent.getSource() == backButton )
             {
-                parent.setVisible( true );
+                parentFrame.setVisible( true );
                 setVisible( false );
                 dispose();
             }

@@ -5,6 +5,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * A class that modifies the HTLM document that is run in the main
+ * @author övgüm
+ */
 public class CreateHTML {
     //properties.
 

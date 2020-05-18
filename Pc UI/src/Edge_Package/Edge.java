@@ -2,12 +2,16 @@ package Edge_Package;
 
 import Node_Package.Node;
 
+/**
+ * A class to help the algorithm that has a startpoint and an endpoint
+ * @author övgüm, oğuz
+ */
 public class Edge implements EdgeInterface
 {
     // properties
-    Node startNode;
-    Node endNode;
-    double distance;
+    private Node startNode;
+    private Node endNode;
+    private double distance;
 
     // constructors
     public Edge(Node startNode, Node endNode )
@@ -53,3 +57,5 @@ public class Edge implements EdgeInterface
         return "(" + startNode + "," + endNode + ")";
     }
 }
+
+
