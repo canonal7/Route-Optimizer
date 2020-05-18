@@ -19,7 +19,7 @@ On this page I will keep a weekly record of what I have done for the CS102 group
 
 1.05.2020
 	-Added some comments
-	-Tested some scenes and it seems to be working
+	-Added all the scene to the window using grid layout and made their coordinates where it looks most suitable and user friendly
 
 02.05.2020
 	- We had a meeting and showed each other what we did, but since we all had eng102 deadlines for the next 2 days we decided we would meet and put the pieces together on a later date
