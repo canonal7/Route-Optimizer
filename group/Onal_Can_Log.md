@@ -21,5 +21,5 @@ We are trying to combine the map with the algorithm.
 This week I have been trying to print the locations to a local output file and I managed it.
 I learned a some methods called console listener,
 I learned the basics of Java's File class which is used to read and write local files. 
-
+ 
 ****
