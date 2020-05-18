@@ -13,7 +13,7 @@ It optimizes a route along the given locations. There are both mobile and Java S
 + **Group/project Selection:** completed (23 February 2020)
 + **Requirements:** completed (1 March 2020)
 + **UI Design:** completed (24 March 2020)
-+ **Detailed Design:** in progress
++ **Detailed Design:** (18 May 2020)
 + **Implementation:** in progress
 + **Reflections:** not yet!
 
