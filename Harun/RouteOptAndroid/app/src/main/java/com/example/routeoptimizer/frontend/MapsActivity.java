@@ -36,9 +36,7 @@ import java.util.ArrayList;
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener {
     private static final String TAG = MapsActivity.class.getSimpleName();
     FileInputStream fis = null;
-    private String locationList;
     final String FILE_NAME = "optimizedList.txt";
-    private GoogleMap mMap;
     LatLng[] coordinatesList;
 
     @Override
@@ -53,7 +51,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void testButton() {
-        locationList = getLocationList(FILE_NAME);
+        String locationList = getLocationList(FILE_NAME);
         String[] strings = locationList.split("\n");
         coordinatesList = getLatLng(strings);
     }
@@ -81,28 +79,27 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         } catch (Resources.NotFoundException e) {
             Log.e(TAG, "Can't find style. Error: ", e);
         }
-        mMap = googleMap;
-        mMap.setMyLocationEnabled(true);
-        mMap.setOnMyLocationButtonClickListener(this);
-        mMap.setOnMyLocationClickListener(this);
+        googleMap.setMyLocationEnabled(true);
+        googleMap.setOnMyLocationButtonClickListener(this);
+        googleMap.setOnMyLocationClickListener(this);
         // Adding markers
         testButton();
         if(coordinatesList.length > 1) {
             for (int i = 0; i < coordinatesList.length - 1; i++) {
                 if (i == 0) {
-                    mMap.addMarker(new MarkerOptions().position(coordinatesList[i]).title(" ").
+                    googleMap.addMarker(new MarkerOptions().position(coordinatesList[i]).title(" ").
                             snippet("Starting Point").icon(BitmapDescriptorFactory.
                             defaultMarker(BitmapDescriptorFactory.HUE_AZURE))).showInfoWindow();
 
                     continue;
                 }
-                mMap.addMarker(new MarkerOptions().position(coordinatesList[i]).title(" ").
+                googleMap.addMarker(new MarkerOptions().position(coordinatesList[i]).title(" ").
                         snippet((i + 1) + ". Location").icon(BitmapDescriptorFactory.
                         defaultMarker(235.0f))).showInfoWindow();
             }
         }
         // Move the camera to starting point
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(coordinatesList[0]));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(coordinatesList[0]));
         // Creating the PolyLine
         Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
                 .clickable(true).add(coordinatesList));
@@ -176,28 +173,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             i++;
         }
         return locationList;
-    }
-
-    private void stylePolyLine(Polyline polyline) {
-        String type = "";
-        if(polyline.getTag() != null) {
-            type = polyline.getTag().toString();
-        }
-        switch (type) {
-            case "A":
-                polyline.setStartCap(
-                        new CustomCap(
-                                BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_light), 10));
-                break;
-            case "B":
-                polyline.setStartCap(new RoundCap());
-                break;
-        }
-
-        polyline.setEndCap(new RoundCap());
-        polyline.setWidth(12);
-        polyline.setColor(Color.CYAN);
-        polyline.setJointType(JointType.ROUND);
     }
 
     @Override
