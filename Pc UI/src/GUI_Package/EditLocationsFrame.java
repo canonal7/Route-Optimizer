@@ -9,13 +9,13 @@ import java.awt.*;
 public class EditLocationsFrame extends JFrame
 {
     // properties
-    JFrame parentFrame, mapFrame;
-    CreateHTML createHTML;
-    JPanel mainPanel, mapPanel, listPanel;
-    JButton backButton, deleteButton;
-    JList<Object> nodeJList;
-    NodeList nodes;
-    Dimension dim;
+    private JFrame parentFrame, mapFrame;
+    private CreateHTML createHTML;
+    private JPanel mainPanel, mapPanel, listPanel;
+    private JButton backButton, deleteButton;
+    private JList<Object> nodeJList;
+    private NodeList nodes;
+    private Dimension dim;
 
 
     // constructor
@@ -27,17 +27,25 @@ public class EditLocationsFrame extends JFrame
 
         setExtendedState( MAXIMIZED_BOTH );
         setDefaultCloseOperation( EXIT_ON_CLOSE );
+        setUndecorated( true );
 
         // -------start of creating components------
         dim = Toolkit.getDefaultToolkit().getScreenSize();
 
         mapFrame = new MapFrame( this );
         mapPanel = (JPanel)mapFrame.getContentPane();
-        mapPanel.setBounds( 0,0, (int)(dim.getWidth()*(double)(9/10)), (int)dim.getHeight() );
+        mapPanel.setBounds( 0,0, (int)dim.getWidth()*8/10, (int)dim.getHeight() );
 
-/*        listPanel = new JPanel();
-        listPanel.setBounds( (int)(dim.getWidth()*(double)(3/4)), 0, (int)(dim.getWidth()*(double)(1/4)), (int)dim.getHeight() );
-        listPanel.setBackground( Color.BLUE );*/
+        nodes = new NodeList();
+        nodes.readNodesFromFile();
+        nodeJList = new JList<Object>( nodes.getStringList().toArray());
+
+
+        listPanel = new JPanel();
+        listPanel.setBounds( (int)(dim.getWidth()*(8/10)), 0, (int)(dim.getWidth()*(2/10)), (int)dim.getHeight() );
+        listPanel.setLayout( new BorderLayout() );
+        listPanel.add( nodeJList );
+
 
         mainPanel = new JPanel();
         mainPanel.setLayout( null);
@@ -47,12 +55,7 @@ public class EditLocationsFrame extends JFrame
 
         deleteButton = new JButton( "Delete" );
         //deleteButton.setBounds();
-
-        nodes = new NodeList();
-        nodes.readNodesFromFile();
-
-        nodeJList = new JList<Object>( nodes.getStringList().toArray());
-        //nodeJList.setBounds();
+        // -------end of creating components------
 
 
 
@@ -61,9 +64,9 @@ public class EditLocationsFrame extends JFrame
 
 
 
-        //mainPanel.add( listPanel );
-        mainPanel.add( mapPanel );
         mainPanel.setLayout( null );
+        mainPanel.add( listPanel );
+        mainPanel.add( mapPanel );
 
 
 

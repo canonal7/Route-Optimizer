@@ -75,7 +75,7 @@ public class CreateHTML {
         String addMarkers = "";
         for( int i = 0; ndList != null && i < ndList.size(); i++)
         {
-            if( i != 0 && ndList.get(0) == ndList.get(i) ) // for the event that the last node is equal to the first node, dont show it
+            if( i != 0 && ndList.get(0).equals( ndList.get(i) )) // for the event that the last node is equal to the first node, dont show it
                 break;
             addMarkers += "var marker" + i + " = new google.maps.Marker({" + "\n"
                     + "position: " + "{lat: " + ndList.get( i ).getX() + "," + " lng: " + ndList.get( i ).getY() + "}," + "\n"
