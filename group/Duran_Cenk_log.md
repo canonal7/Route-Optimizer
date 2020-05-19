@@ -32,7 +32,7 @@ On this page I will keep a weekly record of what I have done for the CS102 group
 
 29.04.2020 
 
-       -We figured out to implement the google maps api and then used some extra libraries to make it functipn better such as JxBrowser library
+       -We figured out to implement the google maps api and then used some extra libraries to make it function better such as JxBrowser library
 
 
 
