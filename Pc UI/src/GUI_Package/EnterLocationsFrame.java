@@ -2,6 +2,7 @@ package GUI_Package;
 
 import Edge_Package.*;
 import MapDraw.CreateHTML;
+import Node_Package.NodeList;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,6 +27,7 @@ public class EnterLocationsFrame extends JFrame
     private ActionListener actionListener;
     private EdgeList edges;
     private CreateHTML createHTML;
+    private NodeList nodes;
 
     // constructor
     public EnterLocationsFrame( JFrame parentFrame)
@@ -138,7 +140,12 @@ public class EnterLocationsFrame extends JFrame
             }
             else if( actionEvent.getSource() == editButton )
             {
-
+                nodes = new NodeList();
+                nodes.readNodesFromFile();
+                createHTML.showMarkersOnHTML( mapHTMLPath, nodes );
+                new EditLocationsFrame( thisFrame );
+                setVisible( false );
+                dispose();
             }
             else if( actionEvent.getSource() == backButton )
             {
