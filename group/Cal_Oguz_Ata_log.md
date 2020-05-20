@@ -81,5 +81,8 @@ On this page I will keep a weekly record of what I have done for the CS102 group
 	-Removed unnecessary files and imports
 	-Changed variable names for meaningfull ones
 	-Added header comments for all pc ui files and some javadoc comments
+19.05.2020
+	-Started the edit screen for the pc ui but could finish it
+	-Recorded the video and helped cenk edit it
 ****
 

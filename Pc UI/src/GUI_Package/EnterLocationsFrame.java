@@ -61,7 +61,7 @@ public class EnterLocationsFrame extends JFrame
         enterCoordinatesButton.setBounds( 40, 200, 140, 40 );
         enterCoordinatesButton.addActionListener( actionListener );
 
-        enterLinkButton = new JButton( "Enter Link" );
+        enterLinkButton = new JButton( "Create Link" );
         enterLinkButton.setBounds( 40, 260, 140, 40 );
         enterLinkButton.addActionListener( actionListener );
 
