@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5c16d650-9720-485a-98c5-3aabc6ed30f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pc UI/Map_Files/HTML/simple_map.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pc UI/Map_Files/HTML/simple_map.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pc UI/Txt_Files/Unordered_Nodes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pc UI/Txt_Files/Unordered_Nodes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI_Package/EnterLocationsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/EnterLocationsFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Txt_Files/Unordered_Nodes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Txt_Files/Unordered_Nodes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Edge_Package/EdgeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Edge_Package/EdgeList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,10 +114,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589739817868" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1589906982508">
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1590409147385">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589906982508" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590409147385" />
     <state x="1058" y="167" width="737" height="606" key="find.popup" timestamp="1589833898536">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
