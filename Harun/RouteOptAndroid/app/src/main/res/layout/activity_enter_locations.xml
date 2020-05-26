@@ -29,24 +29,12 @@
         android:onClick="enterCoordinates"
         android:text="@string/enter_coordinates_button"
         android:textColor="@color/colorText"
-        app:layout_constraintBottom_toTopOf="@+id/EnterLinkButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectFromMapBut" />
-
-    <Button
-        android:id="@+id/EnterLinkButton"
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorButton"
-        android:text="@string/enter_link_button"
-        android:textColor="@color/colorText"
-        app:layout_constraintBottom_toTopOf="@+id/editButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EnterCoordinatesButton" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39" />
 
     <Button
         android:id="@+id/editButton"
