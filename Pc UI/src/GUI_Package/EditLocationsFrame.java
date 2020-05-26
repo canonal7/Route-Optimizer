@@ -44,6 +44,7 @@ public class EditLocationsFrame extends JFrame
         dim = Toolkit.getDefaultToolkit().getScreenSize();
 
         mapFrame = new MapFrame( this );
+
         mapPanel = (JPanel)mapFrame.getContentPane();
         mapPanel.setBounds( 0,0, (int)dim.getWidth()*8/10, (int)dim.getHeight() );
 
@@ -57,19 +58,15 @@ public class EditLocationsFrame extends JFrame
         nodeJList.setBounds( 0, 0, (int)dim.getWidth()*2/10, (int)dim.getHeight() - 40);
 
         deleteButton = new JButton( "Delete Location" );
-        deleteButton.setBounds( (int)dim.getWidth()/10 - 100,(int)dim.getHeight() - 40 , 200, 40);
+        deleteButton.setBounds( (int)dim.getWidth()*8/10,(int)dim.getHeight() - 40 , (int)dim.getWidth()/10, 40);
 
         scrollPane = new JScrollPane();
-        //scrollPane.setViewportView( nodeJList );
-        scrollPane.setBounds( 0, 0, (int)(dim.getWidth()*2/10), (int)dim.getHeight() );
+        scrollPane.setViewportView( nodeJList );
+        scrollPane.setBounds( 0, 0, (int)(dim.getWidth()*2/10), (int)dim.getHeight() - 40 );
         scrollPane.setVerticalScrollBarPolicy( JScrollPane.VERTICAL_SCROLLBAR_ALWAYS );
-        scrollPane.setLayout( null );
-
-        scrollPane.add( deleteButton );
-        scrollPane.add( nodeJList );
 
         listPanel = new JPanel();
-        listPanel.setBounds( (int)(dim.getWidth()*8/10), 0, (int)(dim.getWidth()*2/10), (int)dim.getHeight() );
+        listPanel.setBounds( (int)(dim.getWidth()*8/10), 0, (int)(dim.getWidth()*2/10), (int)dim.getHeight() - 40);
         listPanel.setLayout( null );
         listPanel.add( scrollPane );
 
@@ -79,7 +76,6 @@ public class EditLocationsFrame extends JFrame
 
         backButton = new JButton( "Back" );
         backButton.setBounds( 100, 100, 20, 20);
-
 
 
         // -------end of creating components------
@@ -94,6 +90,7 @@ public class EditLocationsFrame extends JFrame
         mainPanel.setLayout( null );
         mainPanel.add( listPanel );
         mainPanel.add( mapPanel );
+        mainPanel.add( deleteButton );
 
 
 
