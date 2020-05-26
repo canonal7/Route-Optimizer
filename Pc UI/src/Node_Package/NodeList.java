@@ -197,11 +197,11 @@ public class NodeList
      * Returns the string representation arrayList of nodes
      * @return arraylist</String> of nodes
      */
-    public ArrayList<String> getStringList()
+    public String[] getStringList()
     {
-        ArrayList<String> temp = new ArrayList();
+        String[] temp = new String[size()];
         for( int n = 0; n < size(); n++)
-            temp.add( "" + nodes.get(n) );
+            temp[n] = "" + nodes.get(n);
 
         return temp;
     }

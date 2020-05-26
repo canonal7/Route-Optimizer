@@ -459,13 +459,6 @@ public class CreateHTML {
                 "\n" +
                 "\n" +
                 "\n" +
-                "        // This event listener will call addMarker() when the map is clicked.\n" +
-                "        map.addListener('click', function(event) {\n" +
-                "          addMarker(event.latLng);\n" +
-                "\n" +
-                "          //console.log(labelIndex + getPosition());\n" +
-                "\n" +
-                "        });\n" +
                 "\n" +
                 markerAdd( nodeList ) +
                 "\n" +
