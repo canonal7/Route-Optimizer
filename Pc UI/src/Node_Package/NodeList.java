@@ -193,6 +193,19 @@ public class NodeList
         return edges;
     }
 
+    /**
+     * Returns the string representation arrayList of nodes
+     * @return arraylist</String> of nodes
+     */
+    public String[] getStringList()
+    {
+        String[] temp = new String[size()];
+        for( int n = 0; n < size(); n++)
+            temp[n] = "" + nodes.get(n);
+
+        return temp;
+    }
+
 
 
 

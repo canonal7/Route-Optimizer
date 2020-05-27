@@ -146,6 +146,9 @@ public class EdgeList implements EdgeListInterface
         nearestNeighborWithStartPoint(start);
     }
 
+    /**
+     * Calculates two-opt on a temporary nodeList and puts the result in the final route
+     */
     public void calculateTwoOpt()
     {
         NodeList nodes = extractNodeList();
