@@ -52,13 +52,9 @@ public class EditLocationsFrame extends JFrame
         mapPanel.setBounds( 0,0, (int)dim.getWidth()*8/10, (int)dim.getHeight() );
 
         nodes = new NodeList();
-        nodes.readNodesFromFile();
-
-        nodeArray = nodes.getStringList();
 
         jListModel = new DefaultListModel<>();
-        for (String s : nodeArray)
-            jListModel.addElement(s);
+        updateList();
 
         nodeJList = new JList<String>( jListModel );
         nodeJList.setFont( nodeJList.getFont().deriveFont(15f));
@@ -115,7 +111,7 @@ public class EditLocationsFrame extends JFrame
             e.printStackTrace();
         }
 
-        // writes all of the lines except the line nums that are betweent the start and end index so that it essentially deletes them
+        // writes all of the lines except the line nums that are between the start and end index so that it essentially deletes them
         for( int n = 0; n < lines.size(); n++)
         {
             if( !( n >= start && n <= end) )
@@ -168,6 +164,16 @@ public class EditLocationsFrame extends JFrame
         dispose();
     }
 
+    public void updateList()
+    {
+        jListModel.clear();
+        nodes.readNodesFromFile();
+
+        nodeArray = nodes.getStringList();
+        for( int n = 1; n < nodeArray.length + 1; n++)
+            jListModel.addElement( n + ") " + nodeArray[n-1]);
+    }
+
     // inner class
     public class ListSelectionListener implements ActionListener
     {
@@ -188,6 +194,9 @@ public class EditLocationsFrame extends JFrame
 
             // reloads the map for the change of markers to take effect
             ((MapFrame)mapFrame).reloadButtonActionPerformed( arg0 );
+
+            // updates the list for the indexes of the locations to match up
+            updateList();
         }
     }
 }
