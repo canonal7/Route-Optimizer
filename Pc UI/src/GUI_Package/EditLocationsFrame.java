@@ -4,13 +4,15 @@ import MapDraw.CreateHTML;
 import Node_Package.NodeList;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.util.List;
 
 public class EditLocationsFrame extends JFrame
 {
@@ -27,6 +29,9 @@ public class EditLocationsFrame extends JFrame
     private Dimension dim;
     private JScrollPane scrollPane;
     private FileWriter fileWriter;
+    private DefaultListModel<String> jListModel;
+    private String[] nodeArray;
+    private int[] selectedIndices;
 
 
     // constructor
@@ -43,7 +48,7 @@ public class EditLocationsFrame extends JFrame
         // -------start of creating components------
         dim = Toolkit.getDefaultToolkit().getScreenSize();
 
-        mapFrame = new MapFrame( this );
+        mapFrame = new MapFrame( this, true );
 
         mapPanel = (JPanel)mapFrame.getContentPane();
         mapPanel.setBounds( 0,0, (int)dim.getWidth()*8/10, (int)dim.getHeight() );
@@ -51,14 +56,21 @@ public class EditLocationsFrame extends JFrame
         nodes = new NodeList();
         nodes.readNodesFromFile();
 
+        nodeArray = nodes.getStringList();
 
-        nodeJList = new JList<String>( nodes.getStringList());
+        jListModel = new DefaultListModel<>();
+        for( int n = 0; n <  nodeArray.length; n++ )
+            jListModel.addElement( nodeArray[n] );
+
+
+        nodeJList = new JList<String>( jListModel );
         nodeJList.setFont( nodeJList.getFont().deriveFont(15f));
         nodeJList.setLayoutOrientation( JList.VERTICAL );
         nodeJList.setBounds( 0, 0, (int)dim.getWidth()*2/10, (int)dim.getHeight() - 40);
 
         deleteButton = new JButton( "Delete Location" );
-        deleteButton.setBounds( (int)dim.getWidth()*8/10,(int)dim.getHeight() - 40 , (int)dim.getWidth()/10, 40);
+        deleteButton.setBounds( (int)dim.getWidth()*17/20,(int)dim.getHeight() - 40 , (int)dim.getWidth()/10, 40);
+        deleteButton.addActionListener( new ListSelectionListener() );
 
         scrollPane = new JScrollPane();
         scrollPane.setViewportView( nodeJList );
@@ -77,7 +89,7 @@ public class EditLocationsFrame extends JFrame
         backButton = new JButton( "Back" );
         backButton.setBounds( 100, 100, 20, 20);
 
-
+        jListModel = (DefaultListModel<String>)nodeJList.getModel();
         // -------end of creating components------
 
 
@@ -146,7 +158,6 @@ public class EditLocationsFrame extends JFrame
             Scanner scan = new Scanner( new File( path ) );
             while( scan.hasNextLine() )
                 lines.add( scan.nextLine() );
-            System.out.println( "Final lines: " + lines );
             scan.close();
         } catch( FileNotFoundException e )
         {
@@ -154,5 +165,33 @@ public class EditLocationsFrame extends JFrame
         }
 
         return lines;
+    }
+
+    public void back()
+    {
+        parentFrame.setVisible( true );
+        setVisible( false );
+        dispose();
+    }
+
+    public class ListSelectionListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent arg0)
+        {
+            selectedIndices = nodeJList.getSelectedIndices();
+
+            // deleting the nodes at the text file
+            if( selectedIndices != null && selectedIndices.length > 0)
+            deleteLines( selectedIndices[0], selectedIndices[selectedIndices.length - 1], unorderedNodesPath);
+
+            // get a list with selected objects
+            List<String> selectedItems = nodeJList.getSelectedValuesList();
+
+            for (String node: selectedItems)
+                jListModel.removeElement(node);
+
+            // reloads the map for the change of markers to take effect
+            ((MapFrame)mapFrame).reloadButtonActionPerformed( arg0 );
+        }
     }
 }

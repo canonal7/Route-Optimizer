@@ -84,5 +84,10 @@ On this page I will keep a weekly record of what I have done for the CS102 group
 19.05.2020
 	-Started the edit screen for the pc ui but could finish it
 	-Recorded the video and helped cenk edit it
+27.05.2020
+	-Worked on the edit screen
+28.05.2020
+	-Finished the edit screen
+
 ****
 

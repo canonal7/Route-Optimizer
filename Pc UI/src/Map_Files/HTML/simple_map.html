@@ -62,57 +62,13 @@
 
 
 
+        // This event listener will call addMarker() when the map is clicked.
+        map.addListener('click', function(event) {
+          addMarker(event.latLng);
 
-var marker0 = new google.maps.Marker({
-position: {lat: 1.0, lng: 1.0},
-map: map,
-label: "1"
-});
-var marker1 = new google.maps.Marker({
-position: {lat: 2.0, lng: 2.0},
-map: map,
-label: "2"
-});
-var marker2 = new google.maps.Marker({
-position: {lat: 3.0, lng: 3.0},
-map: map,
-label: "3"
-});
-var marker3 = new google.maps.Marker({
-position: {lat: 4.0, lng: 4.0},
-map: map,
-label: "4"
-});
-var marker4 = new google.maps.Marker({
-position: {lat: 5.0, lng: 5.0},
-map: map,
-label: "5"
-});
-var marker5 = new google.maps.Marker({
-position: {lat: 6.0, lng: 6.0},
-map: map,
-label: "6"
-});
-var marker6 = new google.maps.Marker({
-position: {lat: 7.0, lng: 7.0},
-map: map,
-label: "7"
-});
-var marker7 = new google.maps.Marker({
-position: {lat: 8.0, lng: 8.0},
-map: map,
-label: "8"
-});
-var marker8 = new google.maps.Marker({
-position: {lat: 9.0, lng: 9.0},
-map: map,
-label: "9"
-});
-var marker9 = new google.maps.Marker({
-position: {lat: 10.0, lng: 10.0},
-map: map,
-label: "10"
-});
+          //console.log(labelIndex + getPosition());
+
+        });
 
       }
 
