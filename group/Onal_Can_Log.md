@@ -21,5 +21,10 @@ We are trying to combine the map with the algorithm.
 This week I have been trying to print the locations to a local output file and I managed it.
 I learned a some methods called console listener,
 I learned the basics of Java's File class which is used to read and write local files. 
+
+### ~ 20.05.2020 ~
+This week we put all the code together and tested if it works.
+It worked but there were some minor problems that should be fixed.
+I helped my friends to fix them. We recorded our demp video through zoom.
  
 ****
