@@ -14,10 +14,11 @@ It optimizes a route along the given locations. There are both mobile and Java S
 + **Requirements:** completed (1 March 2020)
 + **UI Design:** completed (24 March 2020)
 + **Detailed Design:** (18 May 2020)
-+ **Implementation:** in progress
-+ **Reflections:** not yet!
++ **Implementation:** (20 May 2020)
++ **Reflections:** (28 May 2020)
 
 [Group Meetings Log](group/meetingslog.md)
+
 [Reflections](group/reflections.md)
 #### Group Members
 - [Can Onal](group/Onal_Can_log.md)    
