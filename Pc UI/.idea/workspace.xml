@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c16d650-9720-485a-98c5-3aabc6ed30f5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Harun/RouteOptAndroid/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Harun/RouteOptAndroid/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI_Package/EditLocationsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/EditLocationsFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MapDraw/CreateHTML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapDraw/CreateHTML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map_Files/HTML/simple_map.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map_Files/HTML/simple_map.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node_Package/NodeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node_Package/NodeList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Txt_Files/Unordered_Nodes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Txt_Files/Unordered_Nodes.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,10 +134,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589739817868" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1590502592317">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="875" y="464" key="com.intellij.ide.util.TipDialog" timestamp="1590669535038">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590502592317" />
+    <state x="875" y="464" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1590669535038" />
     <state x="1058" y="167" width="737" height="606" key="find.popup" timestamp="1589833898536">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
