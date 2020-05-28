@@ -8,20 +8,20 @@
     tools:context=".frontend.SettingsActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/accuracy_button"
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:layout_marginTop="36dp"
         android:background="@color/colorButton"
         android:text="@string/accuracy_level_button"
         android:textColor="@color/colorText"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/mapLocationsButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+        app:layout_constraintTop_toBottomOf="@+id/satViewCheckBox" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/mapLocationsButton"
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
@@ -33,10 +33,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/accuracy_button" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/satViewCheckBox"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
@@ -44,13 +44,13 @@
         android:fontFamily="sans-serif-medium"
         android:text="@string/satellite_view_button"
         android:textColor="@color/colorText"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/accuracy_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/downloadCheckBox" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/downloadCheckBox"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -58,7 +58,7 @@
         android:fontFamily="sans-serif-medium"
         android:text="@string/download_the_map_button"
         android:textColor="@color/colorText"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox2"
+        app:layout_constraintBottom_toTopOf="@+id/satViewCheckBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
