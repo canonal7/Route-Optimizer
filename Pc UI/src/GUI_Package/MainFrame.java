@@ -18,7 +18,7 @@ public class MainFrame extends JFrame
 {
     // constants
     final String unorderedNodesPath = "src/Txt_Files/Unordered_Nodes.txt";
-    final String backgroundPath = "\\Images\\currentback.png";
+    final String backgroundPath = "src\\Images\\currentback.png";
     final String mapHTMLPath = "src/Map_Files/HTML/simple_map.html";
 
     // properties
