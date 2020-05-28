@@ -18,6 +18,7 @@ It optimizes a route along the given locations. There are both mobile and Java S
 + **Reflections:** not yet!
 
 [Group Meetings Log](group/meetingslog.md)
+[Reflections](group/reflections.md)
 #### Group Members
 - [Can Onal](group/Onal_Can_log.md)    
 - [Muhamamd Saad Ameer](group/Muhammad_Saad_Ameer_log.md)
