@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Pc UI:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5c16d650-9720-485a-98c5-3aabc6ed30f5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Pc_UI_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI_Package/EditLocationsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/EditLocationsFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pc UI/Txt_Files/Unordered_Nodes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pc UI/Txt_Files/Unordered_Nodes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI_Package/EditLocationsFrame.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI_Package/EnterLocationsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/EnterLocationsFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI_Package/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI_Package/MapFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Package/MapFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map_Files/HTML/simple_map.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map_Files/HTML/simple_map.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Txt_Files/Unordered_Nodes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Txt_Files/Unordered_Nodes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../group/Cal_Oguz_Ata_log.md" beforeDir="false" afterPath="$PROJECT_DIR$/../group/Cal_Oguz_Ata_log.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +41,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Map_Files/lib/MyLicense-1.0.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -79,6 +85,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="179" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1589741011954" />
+    <state x="690" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590663171236">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590663171236" />
+    <state x="808" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1590662559547">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="808" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590662559547" />
     <state x="388" y="237" key="FileChooserDialogImpl" timestamp="1589741006426">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -119,14 +133,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589895388949" />
-    <state x="440" y="95" key="SettingsEditor" timestamp="1589739817868">
+    <state x="440" y="95" key="SettingsEditor" timestamp="1590664193436">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589739817868" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1590614882163">
+    <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1590664193436" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1590664293475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590614882163" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590664293475" />
     <state x="1058" y="167" width="737" height="606" key="find.popup" timestamp="1589833898536">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

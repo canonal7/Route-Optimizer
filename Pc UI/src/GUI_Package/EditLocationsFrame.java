@@ -1,6 +1,5 @@
 package GUI_Package;
 
-import MapDraw.CreateHTML;
 import Node_Package.NodeList;
 import javax.swing.*;
 import java.awt.*;
@@ -21,7 +20,6 @@ public class EditLocationsFrame extends JFrame
 
     // properties
     private JFrame parentFrame, mapFrame;
-    private CreateHTML createHTML;
     private JPanel mainPanel, mapPanel, listPanel;
     private JButton backButton, deleteButton;
     private JList<String> nodeJList;
@@ -59,9 +57,8 @@ public class EditLocationsFrame extends JFrame
         nodeArray = nodes.getStringList();
 
         jListModel = new DefaultListModel<>();
-        for( int n = 0; n <  nodeArray.length; n++ )
-            jListModel.addElement( nodeArray[n] );
-
+        for (String s : nodeArray)
+            jListModel.addElement(s);
 
         nodeJList = new JList<String>( jListModel );
         nodeJList.setFont( nodeJList.getFont().deriveFont(15f));
@@ -83,28 +80,19 @@ public class EditLocationsFrame extends JFrame
         listPanel.add( scrollPane );
 
 
-        mainPanel = new JPanel();
-        mainPanel.setLayout( null);
-
         backButton = new JButton( "Back" );
         backButton.setBounds( 100, 100, 20, 20);
 
         jListModel = (DefaultListModel<String>)nodeJList.getModel();
+
+        mainPanel = new JPanel();
+        mainPanel.setLayout( null);
         // -------end of creating components------
-
-
-        //deleteLines( 2, 4, unorderedNodesPath );
-
-
-
-
 
         mainPanel.setLayout( null );
         mainPanel.add( listPanel );
         mainPanel.add( mapPanel );
         mainPanel.add( deleteButton );
-
-
 
         add( mainPanel );
 
@@ -116,7 +104,7 @@ public class EditLocationsFrame extends JFrame
      * @param start the start index
      * @param end the end index
      */
-    public void deleteLines( int start, int end, String path )
+    private void deleteLines( int start, int end, String path )
     {
         ArrayList<String> lines = getAllLines( path );
 
@@ -127,8 +115,7 @@ public class EditLocationsFrame extends JFrame
             e.printStackTrace();
         }
 
-
-
+        // writes all of the lines except the line nums that are betweent the start and end index so that it essentially deletes them
         for( int n = 0; n < lines.size(); n++)
         {
             if( !( n >= start && n <= end) )
@@ -146,10 +133,14 @@ public class EditLocationsFrame extends JFrame
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
-    public ArrayList<String> getAllLines( String path )
+    /**
+     * Gets all the lines of a file and returns them in an arraylist
+     * @param path the path of the file
+     * @return ArrayList<String> lines
+     */
+    private ArrayList<String> getAllLines( String path )
     {
         ArrayList<String> lines = null;
         try
@@ -167,6 +158,9 @@ public class EditLocationsFrame extends JFrame
         return lines;
     }
 
+    /**
+     * Disposes this frame and goes back to its parent
+     */
     public void back()
     {
         parentFrame.setVisible( true );
@@ -174,15 +168,17 @@ public class EditLocationsFrame extends JFrame
         dispose();
     }
 
+    // inner class
     public class ListSelectionListener implements ActionListener
     {
         public void actionPerformed(ActionEvent arg0)
         {
+            // getting the array of selected indices from the JList
             selectedIndices = nodeJList.getSelectedIndices();
 
             // deleting the nodes at the text file
             if( selectedIndices != null && selectedIndices.length > 0)
-            deleteLines( selectedIndices[0], selectedIndices[selectedIndices.length - 1], unorderedNodesPath);
+                deleteLines( selectedIndices[0], selectedIndices[selectedIndices.length - 1], unorderedNodesPath);
 
             // get a list with selected objects
             List<String> selectedItems = nodeJList.getSelectedValuesList();

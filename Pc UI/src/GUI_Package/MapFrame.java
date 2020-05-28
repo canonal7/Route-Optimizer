@@ -164,6 +164,7 @@ public class MapFrame  extends javax.swing.JFrame  {
         else {
             parentFrame.setVisible(true);
             this.setVisible(false);
+
         }
         createHTML.returnToOgHTML(mapHTMLPath);
     }//GEN-LAST:event_jButton2ActionPerformed

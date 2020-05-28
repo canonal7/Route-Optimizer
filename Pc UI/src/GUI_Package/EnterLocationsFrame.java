@@ -152,6 +152,8 @@ public class EnterLocationsFrame extends JFrame
                 parentFrame.setVisible( true );
                 setVisible( false );
                 dispose();
+                if( mapFrame != null )
+                    mapFrame.dispose();
             }
         }
     }
