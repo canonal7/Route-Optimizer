@@ -152,6 +152,8 @@ public class EnterLocationsFrame extends JFrame
                 parentFrame.setVisible( true );
                 setVisible( false );
                 dispose();
+                if( mapFrame != null )
+                    mapFrame.dispose();
             }
         }
     }
@@ -180,7 +182,7 @@ public class EnterLocationsFrame extends JFrame
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                mapFrame = new MapFrame( parentFrame );
+                mapFrame = new MapFrame( parentFrame, false );
                 mapFrame.setVisible( true );
                 setVisible( false );
                 dispose();

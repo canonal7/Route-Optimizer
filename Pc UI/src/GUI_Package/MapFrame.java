@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import MapDraw.CreateHTML;
+import Node_Package.NodeList;
 import com.kingaspx.util.BrowserUtil;
 import com.kingaspx.version.Version;
 import com.teamdev.jxbrowser.chromium.Browser;
@@ -27,7 +28,8 @@ import javax.swing.*;
  */
 public class MapFrame  extends javax.swing.JFrame  {
 
-    public MapFrame( JFrame parentFrame ) {
+    public MapFrame( JFrame parentFrame, boolean inAPanel ) {
+        this.inAPanel = inAPanel;
         this.parentFrame = parentFrame;
         initComponents();
         open_site();
@@ -139,15 +141,32 @@ public class MapFrame  extends javax.swing.JFrame  {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void reloadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    public void reloadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if( inAPanel )
+        {
+            // getting the nodelist to display on the editLocations frame
+            NodeList nodes = new NodeList();
+            nodes.readNodesFromFile();
+
+            // changing the HTML file to show the markers that are read from the txt file
+            CreateHTML createHTML = new CreateHTML();
+            createHTML.showMarkersOnHTML( mapHTMLPath, nodes );
+        }
+
         browser.reload();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        parentFrame.setVisible( true );
-        this.setVisible( false );
         CreateHTML createHTML = new CreateHTML();
-        createHTML.returnToOgHTML( mapHTMLPath );
+        // if this isnt the frame and it is in another frames panel, itt calls the other frames close method
+        if( inAPanel )
+            ((EditLocationsFrame)parentFrame).back();
+        else {
+            parentFrame.setVisible(true);
+            this.setVisible(false);
+
+        }
+        createHTML.returnToOgHTML(mapHTMLPath);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -158,6 +177,7 @@ public class MapFrame  extends javax.swing.JFrame  {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel map_panel;
     private JFrame parentFrame;
+    private boolean inAPanel;
     // End of variables declaration//GEN-END:variables
 
     // constants
